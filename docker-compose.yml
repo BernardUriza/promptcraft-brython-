@@ -1,0 +1,122 @@
+version: '3.9'
+
+services:
+  # PostgreSQL Database
+  db:
+    image: postgres:15-alpine
+    container_name: promptcraft-db
+    restart: unless-stopped
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./scripts/init-db.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    environment:
+      POSTGRES_USER: ${DB_USER:-promptcraft}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-promptcraft_secret_2024}
+      POSTGRES_DB: ${DB_NAME:-promptcraft}
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-promptcraft} -d ${DB_NAME:-promptcraft}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - promptcraft-network
+
+  # Redis Cache & Message Broker
+  redis:
+    image: redis:7-alpine
+    container_name: promptcraft-redis
+    restart: unless-stopped
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - promptcraft-network
+
+  # FastAPI Backend
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: promptcraft-backend
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://${DB_USER:-promptcraft}:${DB_PASSWORD:-promptcraft_secret_2024}@db:5432/${DB_NAME:-promptcraft}
+      - REDIS_URL=redis://redis:6379
+      - SECRET_KEY=${SECRET_KEY:-change-this-in-production-min-32-characters}
+      - ENVIRONMENT=${ENVIRONMENT:-development}
+      - CORS_ORIGINS=${CORS_ORIGINS:-http://localhost:3000,http://localhost:8080}
+    networks:
+      - promptcraft-network
+
+  # Celery Worker
+  celery:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: promptcraft-celery
+    restart: unless-stopped
+    command: celery -A app.tasks.celery_app worker -l info
+    depends_on:
+      - backend
+      - redis
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://${DB_USER:-promptcraft}:${DB_PASSWORD:-promptcraft_secret_2024}@db:5432/${DB_NAME:-promptcraft}
+      - REDIS_URL=redis://redis:6379
+      - CELERY_BROKER_URL=redis://redis:6379/0
+      - CELERY_RESULT_BACKEND=redis://redis:6379/0
+    networks:
+      - promptcraft-network
+
+  # Celery Beat Scheduler
+  celery-beat:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: promptcraft-celery-beat
+    restart: unless-stopped
+    command: celery -A app.tasks.celery_app beat -l info
+    depends_on:
+      - celery
+    environment:
+      - CELERY_BROKER_URL=redis://redis:6379/0
+      - CELERY_RESULT_BACKEND=redis://redis:6379/0
+    networks:
+      - promptcraft-network
+
+  # Nginx Reverse Proxy
+  nginx:
+    image: nginx:alpine
+    container_name: promptcraft-nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./static:/usr/share/nginx/html/static:ro
+      - ./index.html:/usr/share/nginx/html/index.html:ro
+      - ./brython_modules:/usr/share/nginx/html/brython_modules:ro
+      - ./data:/usr/share/nginx/html/data:ro
+    depends_on:
+      - backend
+    networks:
+      - promptcraft-network
+
+networks:
+  promptcraft-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  redis_data:

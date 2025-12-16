@@ -1,0 +1,438 @@
+{
+  "puzzles": [
+    {
+      "id": "puzzle-prompts-basicos",
+      "title": "Tipos de Prompts",
+      "description": "Relaciona cada técnica de prompting con sus características.",
+      "difficulty": "easy",
+      "category": "fundamentals",
+      "xp_reward": 30,
+      "time_limit": 300,
+      "grid_size": {
+        "rows": 4,
+        "cols": 4
+      },
+      "categories": [
+        {
+          "name": "Técnicas",
+          "items": ["Zero-Shot", "Few-Shot", "CoT", "Role"]
+        },
+        {
+          "name": "Característica",
+          "items": ["Sin ejemplos", "Con ejemplos", "Paso a paso", "Personalidad"]
+        }
+      ],
+      "clues": [
+        {
+          "text": "Zero-Shot no requiere ejemplos previos.",
+          "reveals": [["Zero-Shot", "Sin ejemplos"]]
+        },
+        {
+          "text": "Few-Shot utiliza ejemplos para guiar al modelo.",
+          "reveals": [["Few-Shot", "Con ejemplos"]]
+        },
+        {
+          "text": "Chain of Thought descompone el razonamiento.",
+          "reveals": [["CoT", "Paso a paso"]]
+        },
+        {
+          "text": "Role prompting asigna una personalidad o rol.",
+          "reveals": [["Role", "Personalidad"]]
+        }
+      ],
+      "solution": {
+        "Zero-Shot": "Sin ejemplos",
+        "Few-Shot": "Con ejemplos",
+        "CoT": "Paso a paso",
+        "Role": "Personalidad"
+      }
+    },
+    {
+      "id": "puzzle-errores-comunes",
+      "title": "Errores en Prompts",
+      "description": "Identifica qué tipo de error tiene cada prompt problemático.",
+      "difficulty": "medium",
+      "category": "fundamentals",
+      "xp_reward": 50,
+      "time_limit": 420,
+      "grid_size": {
+        "rows": 4,
+        "cols": 4
+      },
+      "categories": [
+        {
+          "name": "Prompt",
+          "items": ["Escribe algo", "Haz todo bien", "Dame info", "Resuelve esto"]
+        },
+        {
+          "name": "Error",
+          "items": ["Muy vago", "Imposible", "Sin contexto", "Ambiguo"]
+        }
+      ],
+      "clues": [
+        {
+          "text": "'Escribe algo' es demasiado vago y no especifica qué escribir.",
+          "reveals": [["Escribe algo", "Muy vago"]]
+        },
+        {
+          "text": "'Haz todo bien' es una instrucción imposible de cumplir perfectamente.",
+          "reveals": [["Haz todo bien", "Imposible"]]
+        },
+        {
+          "text": "'Dame info' no proporciona contexto sobre qué información se necesita.",
+          "reveals": [["Dame info", "Sin contexto"]]
+        },
+        {
+          "text": "'Resuelve esto' es ambiguo sin especificar qué resolver.",
+          "reveals": [["Resuelve esto", "Ambiguo"]]
+        }
+      ],
+      "solution": {
+        "Escribe algo": "Muy vago",
+        "Haz todo bien": "Imposible",
+        "Dame info": "Sin contexto",
+        "Resuelve esto": "Ambiguo"
+      }
+    },
+    {
+      "id": "puzzle-componentes-prompt",
+      "title": "Anatomía del Prompt",
+      "description": "Empareja cada componente con su función en un prompt.",
+      "difficulty": "easy",
+      "category": "fundamentals",
+      "xp_reward": 35,
+      "time_limit": 300,
+      "grid_size": {
+        "rows": 5,
+        "cols": 5
+      },
+      "categories": [
+        {
+          "name": "Componente",
+          "items": ["Rol", "Contexto", "Tarea", "Formato", "Restricción"]
+        },
+        {
+          "name": "Función",
+          "items": ["Define quién", "Info de fondo", "Qué hacer", "Cómo presentar", "Límites"]
+        }
+      ],
+      "clues": [
+        {
+          "text": "El Rol define quién debe ser el modelo (experto, profesor, etc.).",
+          "reveals": [["Rol", "Define quién"]]
+        },
+        {
+          "text": "El Contexto proporciona información de fondo relevante.",
+          "reveals": [["Contexto", "Info de fondo"]]
+        },
+        {
+          "text": "La Tarea especifica qué debe hacer el modelo.",
+          "reveals": [["Tarea", "Qué hacer"]]
+        },
+        {
+          "text": "El Formato indica cómo presentar la respuesta (lista, tabla, etc.).",
+          "reveals": [["Formato", "Cómo presentar"]]
+        },
+        {
+          "text": "Las Restricciones establecen límites (longitud, tono, etc.).",
+          "reveals": [["Restricción", "Límites"]]
+        }
+      ],
+      "solution": {
+        "Rol": "Define quién",
+        "Contexto": "Info de fondo",
+        "Tarea": "Qué hacer",
+        "Formato": "Cómo presentar",
+        "Restricción": "Límites"
+      }
+    },
+    {
+      "id": "puzzle-niveles-especificidad",
+      "title": "Niveles de Especificidad",
+      "description": "Ordena los prompts según su nivel de especificidad.",
+      "difficulty": "medium",
+      "category": "techniques",
+      "xp_reward": 45,
+      "time_limit": 360,
+      "grid_size": {
+        "rows": 4,
+        "cols": 4
+      },
+      "categories": [
+        {
+          "name": "Prompt",
+          "items": ["Escribe código", "Función Python", "Función validar email", "Validar con regex"]
+        },
+        {
+          "name": "Nivel",
+          "items": ["Muy vago", "Algo vago", "Específico", "Muy específico"]
+        }
+      ],
+      "clues": [
+        {
+          "text": "'Escribe código' es muy vago, no especifica lenguaje ni propósito.",
+          "reveals": [["Escribe código", "Muy vago"]]
+        },
+        {
+          "text": "'Función Python' es algo vago, falta el propósito.",
+          "reveals": [["Función Python", "Algo vago"]]
+        },
+        {
+          "text": "'Función validar email' es específico en propósito.",
+          "reveals": [["Función validar email", "Específico"]]
+        },
+        {
+          "text": "'Validar con regex' es muy específico en método y propósito.",
+          "reveals": [["Validar con regex", "Muy específico"]]
+        }
+      ],
+      "solution": {
+        "Escribe código": "Muy vago",
+        "Función Python": "Algo vago",
+        "Función validar email": "Específico",
+        "Validar con regex": "Muy específico"
+      }
+    },
+    {
+      "id": "puzzle-tecnicas-avanzadas",
+      "title": "Técnicas Avanzadas",
+      "description": "Relaciona cada técnica avanzada con su caso de uso ideal.",
+      "difficulty": "hard",
+      "category": "advanced",
+      "xp_reward": 75,
+      "time_limit": 480,
+      "grid_size": {
+        "rows": 5,
+        "cols": 5
+      },
+      "categories": [
+        {
+          "name": "Técnica",
+          "items": ["Self-Consistency", "Tree of Thought", "ReAct", "Prompt Chaining", "Meta-Prompt"]
+        },
+        {
+          "name": "Caso de Uso",
+          "items": ["Verificar respuestas", "Explorar opciones", "Usar herramientas", "Dividir tareas", "Generar prompts"]
+        }
+      ],
+      "clues": [
+        {
+          "text": "Self-Consistency genera múltiples respuestas para verificar cuál es más común.",
+          "reveals": [["Self-Consistency", "Verificar respuestas"]]
+        },
+        {
+          "text": "Tree of Thought explora múltiples caminos de razonamiento.",
+          "reveals": [["Tree of Thought", "Explorar opciones"]]
+        },
+        {
+          "text": "ReAct combina razonamiento con acciones (usar herramientas).",
+          "reveals": [["ReAct", "Usar herramientas"]]
+        },
+        {
+          "text": "Prompt Chaining divide tareas complejas en pasos más simples.",
+          "reveals": [["Prompt Chaining", "Dividir tareas"]]
+        },
+        {
+          "text": "Meta-Prompting usa IA para generar o mejorar prompts.",
+          "reveals": [["Meta-Prompt", "Generar prompts"]]
+        }
+      ],
+      "solution": {
+        "Self-Consistency": "Verificar respuestas",
+        "Tree of Thought": "Explorar opciones",
+        "ReAct": "Usar herramientas",
+        "Prompt Chaining": "Dividir tareas",
+        "Meta-Prompt": "Generar prompts"
+      }
+    },
+    {
+      "id": "puzzle-modelos-llm",
+      "title": "Conoce los Modelos",
+      "description": "Relaciona cada modelo con su empresa creadora.",
+      "difficulty": "easy",
+      "category": "fundamentals",
+      "xp_reward": 25,
+      "time_limit": 240,
+      "grid_size": {
+        "rows": 4,
+        "cols": 4
+      },
+      "categories": [
+        {
+          "name": "Modelo",
+          "items": ["GPT-4", "Claude", "Gemini", "LLaMA"]
+        },
+        {
+          "name": "Empresa",
+          "items": ["OpenAI", "Anthropic", "Google", "Meta"]
+        }
+      ],
+      "clues": [
+        {
+          "text": "GPT-4 es el modelo insignia de OpenAI.",
+          "reveals": [["GPT-4", "OpenAI"]]
+        },
+        {
+          "text": "Claude es desarrollado por Anthropic, enfocado en seguridad.",
+          "reveals": [["Claude", "Anthropic"]]
+        },
+        {
+          "text": "Gemini (antes Bard) es el modelo de Google.",
+          "reveals": [["Gemini", "Google"]]
+        },
+        {
+          "text": "LLaMA es el modelo open source de Meta.",
+          "reveals": [["LLaMA", "Meta"]]
+        }
+      ],
+      "solution": {
+        "GPT-4": "OpenAI",
+        "Claude": "Anthropic",
+        "Gemini": "Google",
+        "LLaMA": "Meta"
+      }
+    },
+    {
+      "id": "puzzle-mejores-practicas",
+      "title": "Mejores Prácticas",
+      "description": "Identifica si cada práctica es recomendada o no.",
+      "difficulty": "medium",
+      "category": "techniques",
+      "xp_reward": 55,
+      "time_limit": 360,
+      "grid_size": {
+        "rows": 4,
+        "cols": 4
+      },
+      "categories": [
+        {
+          "name": "Práctica",
+          "items": ["Ser específico", "Prompts largos", "Dar contexto", "Usar jerga"]
+        },
+        {
+          "name": "Recomendación",
+          "items": ["Siempre", "Depende", "Importante", "Evitar"]
+        }
+      ],
+      "clues": [
+        {
+          "text": "Ser específico siempre mejora los resultados.",
+          "reveals": [["Ser específico", "Siempre"]]
+        },
+        {
+          "text": "Los prompts largos pueden ser buenos o malos, depende del caso.",
+          "reveals": [["Prompts largos", "Depende"]]
+        },
+        {
+          "text": "Dar contexto es importante para respuestas relevantes.",
+          "reveals": [["Dar contexto", "Importante"]]
+        },
+        {
+          "text": "Usar jerga técnica innecesaria puede confundir al modelo.",
+          "reveals": [["Usar jerga", "Evitar"]]
+        }
+      ],
+      "solution": {
+        "Ser específico": "Siempre",
+        "Prompts largos": "Depende",
+        "Dar contexto": "Importante",
+        "Usar jerga": "Evitar"
+      }
+    },
+    {
+      "id": "puzzle-aplicaciones",
+      "title": "Aplicaciones de Prompts",
+      "description": "Empareja cada aplicación con la técnica más adecuada.",
+      "difficulty": "hard",
+      "category": "applications",
+      "xp_reward": 70,
+      "time_limit": 420,
+      "grid_size": {
+        "rows": 5,
+        "cols": 5
+      },
+      "categories": [
+        {
+          "name": "Aplicación",
+          "items": ["Clasificar emails", "Resolver matemáticas", "Generar código", "Traducir textos", "Analizar sentimiento"]
+        },
+        {
+          "name": "Técnica Ideal",
+          "items": ["Few-Shot", "Chain of Thought", "Role + Contexto", "Zero-Shot", "Few-Shot + Formato"]
+        }
+      ],
+      "clues": [
+        {
+          "text": "Clasificar emails requiere ejemplos de cada categoría (Few-Shot).",
+          "reveals": [["Clasificar emails", "Few-Shot"]]
+        },
+        {
+          "text": "Resolver matemáticas se beneficia del razonamiento paso a paso.",
+          "reveals": [["Resolver matemáticas", "Chain of Thought"]]
+        },
+        {
+          "text": "Generar código necesita rol de desarrollador y contexto del proyecto.",
+          "reveals": [["Generar código", "Role + Contexto"]]
+        },
+        {
+          "text": "Traducir textos simples funciona bien con Zero-Shot.",
+          "reveals": [["Traducir textos", "Zero-Shot"]]
+        },
+        {
+          "text": "Analizar sentimiento requiere ejemplos y formato de salida.",
+          "reveals": [["Analizar sentimiento", "Few-Shot + Formato"]]
+        }
+      ],
+      "solution": {
+        "Clasificar emails": "Few-Shot",
+        "Resolver matemáticas": "Chain of Thought",
+        "Generar código": "Role + Contexto",
+        "Traducir textos": "Zero-Shot",
+        "Analizar sentimiento": "Few-Shot + Formato"
+      }
+    }
+  ],
+  "categories": [
+    {
+      "id": "fundamentals",
+      "name": "Fundamentos",
+      "icon": "📚",
+      "description": "Conceptos básicos de prompting"
+    },
+    {
+      "id": "techniques",
+      "name": "Técnicas",
+      "icon": "🎯",
+      "description": "Técnicas de prompting"
+    },
+    {
+      "id": "advanced",
+      "name": "Avanzado",
+      "icon": "🚀",
+      "description": "Técnicas avanzadas"
+    },
+    {
+      "id": "applications",
+      "name": "Aplicaciones",
+      "icon": "💼",
+      "description": "Casos de uso prácticos"
+    }
+  ],
+  "difficulty_settings": {
+    "easy": {
+      "time_multiplier": 1.5,
+      "hint_penalty": 5,
+      "base_xp": 25
+    },
+    "medium": {
+      "time_multiplier": 1.0,
+      "hint_penalty": 10,
+      "base_xp": 50
+    },
+    "hard": {
+      "time_multiplier": 0.8,
+      "hint_penalty": 15,
+      "base_xp": 75
+    }
+  }
+}
