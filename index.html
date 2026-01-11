@@ -86,7 +86,16 @@
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-900 antialiased" onload="brython({debug: 2, cache: false, pythonpath: ['.']})">
+<body class="bg-gray-50 text-gray-900 antialiased" onload="startBrython()">
+    <script>
+    function startBrython() {
+        // Detectar si estamos en GitHub Pages o local
+        var basePath = window.location.pathname.replace(/\/index\.html$/, '').replace(/\/$/, '');
+        if (basePath === '') basePath = '.';
+        console.log('Brython pythonpath:', basePath);
+        brython({debug: 2, cache: false, pythonpath: [basePath]});
+    }
+    </script>
 
     <!-- Loading Screen -->
     <div id="loading-screen">
