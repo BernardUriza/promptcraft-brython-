@@ -29,6 +29,13 @@ LESSON_CATEGORIES = [
         'icon': '💼',
         'description': 'Casos de uso prácticos',
         'order': 4
+    },
+    {
+        'id': 'claude-code',
+        'name': 'Claude Code',
+        'icon': '🤖',
+        'description': 'Aprende a programar con tu asistente de IA en terminal',
+        'order': 5
     }
 ]
 
@@ -1127,6 +1134,694 @@ Evitar: [lo que NO debe incluir]'''
             ]
         },
         'next_lesson': 'prompts-for-analysis'
+    },
+
+    # ============================================
+    # CLAUDE CODE
+    # ============================================
+    'claude-code-intro': {
+        'id': 'claude-code-intro',
+        'title': '¿Qué es Claude Code?',
+        'category': 'claude-code',
+        'difficulty': 'beginner',
+        'duration': 10,
+        'xp_reward': 50,
+        'icon': '🤖',
+        'description': 'Tu primer encuentro con el asistente de programación más avanzado.',
+        'objectives': [
+            'Entender qué es Claude Code y para qué sirve',
+            'Conocer las diferencias con otros asistentes de código',
+            'Prepararte para instalar Claude Code'
+        ],
+        'sections': [
+            {
+                'type': 'text',
+                'title': '¡Bienvenido a Claude Code!',
+                'content': '''**Claude Code** es un asistente de programación que vive en tu terminal. Desarrollado por Anthropic, te permite conversar con una IA mientras programas.
+
+Imagina tener un programador senior sentado a tu lado, disponible 24/7, que:
+• **Entiende tu proyecto completo** - Lee y comprende todos tus archivos
+• **Escribe código por ti** - Puede crear y modificar archivos
+• **Explica lo que no entiendes** - Como un tutor paciente
+• **Encuentra y corrige bugs** - Debugging asistido por IA'''
+            },
+            {
+                'type': 'tip',
+                'content': 'Claude Code es diferente de ChatGPT o Copilot. No solo sugiere código: puede ejecutar comandos, editar archivos y entender el contexto completo de tu proyecto.'
+            },
+            {
+                'type': 'text',
+                'title': '¿Por qué Claude Code?',
+                'content': '''**Comparación con otras herramientas:**
+
+| Herramienta | Tipo | Fortaleza |
+|-------------|------|-----------|
+| **GitHub Copilot** | Autocompletado | Sugerencias mientras escribes |
+| **ChatGPT** | Chat web | Conversaciones generales |
+| **Claude Code** | Terminal + Agente | Control total del proyecto |
+
+Claude Code destaca porque **actúa**: no solo sugiere, sino que puede modificar tu código directamente (con tu permiso).'''
+            },
+            {
+                'type': 'text',
+                'title': '¿Qué puedes hacer con Claude Code?',
+                'content': '''**Casos de uso principales:**
+
+🔧 **Escribir código nuevo**
+"Crea una función que valide emails"
+
+🐛 **Debuggear errores**
+"Este código da error en la línea 42, ¿qué pasa?"
+
+📖 **Entender código existente**
+"Explica qué hace este archivo"
+
+🔄 **Refactorizar**
+"Mejora este código para que sea más legible"
+
+📝 **Documentar**
+"Agrega docstrings a todas las funciones"
+
+🧪 **Crear tests**
+"Genera tests unitarios para esta clase"'''
+            },
+            {
+                'type': 'code',
+                'title': 'Instalación',
+                'language': 'bash',
+                'code': '''# Requisito: Node.js 18+
+# Instala Claude Code globalmente:
+
+npm install -g @anthropic-ai/claude-code
+
+# Verifica la instalación:
+claude --version
+
+# ¡Listo! Para empezar, simplemente escribe:
+claude'''
+            },
+            {
+                'type': 'tip',
+                'content': 'Si no tienes Node.js, descárgalo de nodejs.org. Es gratis y toma solo unos minutos.'
+            }
+        ],
+        'next_lesson': 'claude-code-first-steps'
+    },
+
+    'claude-code-first-steps': {
+        'id': 'claude-code-first-steps',
+        'title': 'Tus Primeros Comandos',
+        'category': 'claude-code',
+        'difficulty': 'beginner',
+        'duration': 12,
+        'xp_reward': 60,
+        'icon': '👣',
+        'description': 'Aprende a comunicarte efectivamente con Claude Code.',
+        'objectives': [
+            'Iniciar y terminar una sesión de Claude Code',
+            'Hacer preguntas básicas sobre código',
+            'Entender cómo Claude Code responde'
+        ],
+        'sections': [
+            {
+                'type': 'text',
+                'title': 'Iniciando tu Primera Sesión',
+                'content': '''Para empezar a usar Claude Code, abre tu terminal y escribe:
+
+```
+claude
+```
+
+Eso es todo. Claude Code se iniciará y verás un prompt esperando tu mensaje.
+
+**La primera vez** te pedirá autenticarte con tu cuenta de Anthropic. Después de eso, estarás listo para conversar.'''
+            },
+            {
+                'type': 'code',
+                'title': 'Tu Primera Conversación',
+                'language': 'text',
+                'code': '''$ claude
+
+╭─────────────────────────────────────────╮
+│  Claude Code                            │
+│  Tu asistente de programación           │
+╰─────────────────────────────────────────╯
+
+> Hola, ¿qué puedes hacer?
+
+Claude: ¡Hola! Puedo ayudarte a:
+- Escribir y modificar código
+- Explicar código existente
+- Debuggear errores
+- Ejecutar comandos
+- Crear archivos y carpetas
+- Y mucho más...
+
+¿En qué proyecto estás trabajando?'''
+            },
+            {
+                'type': 'text',
+                'title': 'Preguntas Básicas que Puedes Hacer',
+                'content': '''**Para entender tu proyecto:**
+• "¿Qué hay en esta carpeta?"
+• "Explica la estructura de este proyecto"
+• "¿Qué hace el archivo main.py?"
+
+**Para obtener ayuda:**
+• "¿Cómo creo una función que haga X?"
+• "¿Cuál es la mejor forma de hacer Y?"
+• "No entiendo este error: [pega el error]"
+
+**Para que actúe:**
+• "Crea un archivo llamado utils.py"
+• "Agrega un comentario explicando esta función"
+• "Ejecuta los tests"'''
+            },
+            {
+                'type': 'tip',
+                'content': 'Habla con Claude Code como hablarías con un colega. No necesitas usar comandos especiales ni sintaxis rara.'
+            },
+            {
+                'type': 'text',
+                'title': 'El Flujo de Trabajo',
+                'content': '''Claude Code funciona en un ciclo simple:
+
+1. **Tú preguntas o pides algo**
+2. **Claude analiza** tu proyecto y contexto
+3. **Claude propone** una respuesta o acción
+4. **Tú apruebas** (si es una acción) o continúas la conversación
+
+**Importante:** Cuando Claude quiere modificar archivos o ejecutar comandos, te pedirá permiso primero. Siempre tienes el control.'''
+            },
+            {
+                'type': 'code',
+                'title': 'Comandos Útiles',
+                'language': 'text',
+                'code': '''# Dentro de una sesión de Claude Code:
+
+/help          → Ver ayuda y comandos disponibles
+/clear         → Limpiar el historial de conversación
+/compact       → Resumir la conversación para ahorrar contexto
+Ctrl+C         → Cancelar la respuesta actual
+Ctrl+D o /exit → Salir de Claude Code
+
+# También puedes usar Claude Code directamente:
+claude "explica este archivo" main.py
+claude -p "crea un script de Python que..."'''
+            }
+        ],
+        'next_lesson': 'claude-code-navigation'
+    },
+
+    'claude-code-navigation': {
+        'id': 'claude-code-navigation',
+        'title': 'Navegando Proyectos',
+        'category': 'claude-code',
+        'difficulty': 'beginner',
+        'duration': 15,
+        'xp_reward': 75,
+        'icon': '🗺️',
+        'description': 'Aprende cómo Claude Code entiende y navega tu código.',
+        'objectives': [
+            'Entender cómo Claude Code lee tu proyecto',
+            'Pedir resúmenes y explicaciones de código',
+            'Buscar funcionalidad específica'
+        ],
+        'sections': [
+            {
+                'type': 'text',
+                'title': 'Claude Code Ve Todo',
+                'content': '''Cuando inicias Claude Code en una carpeta, automáticamente puede:
+
+• **Leer cualquier archivo** de tu proyecto
+• **Entender la estructura** de carpetas
+• **Reconocer el lenguaje** y framework
+• **Identificar dependencias** (package.json, requirements.txt, etc.)
+
+No necesitas explicarle tu proyecto desde cero. Solo pregunta y Claude explorará por ti.'''
+            },
+            {
+                'type': 'example',
+                'title': 'Pidiendo un Resumen',
+                'bad_example': {
+                    'prompt': '¿Qué es esto?',
+                    'issue': 'Demasiado vago, Claude no sabe a qué te refieres'
+                },
+                'good_example': {
+                    'prompt': 'Dame un resumen de este proyecto: qué hace, qué tecnologías usa, y cuáles son los archivos principales.',
+                    'why': 'Específico sobre qué información necesitas'
+                }
+            },
+            {
+                'type': 'text',
+                'title': 'Explorando el Código',
+                'content': '''**Preguntas útiles para explorar:**
+
+📁 **Estructura:**
+• "¿Cuál es la estructura de carpetas de este proyecto?"
+• "¿Dónde está la lógica principal?"
+
+🔍 **Búsqueda:**
+• "¿Dónde se define la función processPayment?"
+• "¿Qué archivos manejan la autenticación?"
+
+🔗 **Conexiones:**
+• "¿Cómo se conectan estos dos archivos?"
+• "¿Qué módulos importa main.py?"'''
+            },
+            {
+                'type': 'code',
+                'title': 'Ejemplos de Exploración',
+                'language': 'text',
+                'code': '''> ¿Qué tecnologías usa este proyecto?
+
+Claude: Analizando tu proyecto...
+
+Este es un proyecto de **React + TypeScript** con:
+- Frontend: React 18, Tailwind CSS
+- Estado: Redux Toolkit
+- API: Axios para llamadas HTTP
+- Testing: Jest + React Testing Library
+- Build: Vite
+
+Archivos clave:
+- src/App.tsx - Componente principal
+- src/store/ - Configuración de Redux
+- src/api/ - Servicios de API'''
+            },
+            {
+                'type': 'tip',
+                'content': 'Si tu proyecto es muy grande, Claude Code es inteligente sobre qué archivos leer. No carga todo en memoria, sino que busca lo relevante para tu pregunta.'
+            },
+            {
+                'type': 'text',
+                'title': 'Entendiendo Código Específico',
+                'content': '''Para entender una parte específica del código:
+
+**Archivo completo:**
+"Explica qué hace el archivo src/utils/validation.js"
+
+**Función específica:**
+"¿Qué hace la función calculateTax y cómo la uso?"
+
+**Flujo de datos:**
+"¿Cómo fluyen los datos desde el formulario hasta la base de datos?"
+
+**Lógica compleja:**
+"Este regex me confunde: /^[a-zA-Z0-9]+$/. ¿Qué valida exactamente?"'''
+            }
+        ],
+        'next_lesson': 'claude-code-editing'
+    },
+
+    'claude-code-editing': {
+        'id': 'claude-code-editing',
+        'title': 'Editando Código con IA',
+        'category': 'claude-code',
+        'difficulty': 'intermediate',
+        'duration': 18,
+        'xp_reward': 90,
+        'icon': '✏️',
+        'description': 'Deja que Claude Code escriba y modifique código por ti.',
+        'objectives': [
+            'Pedir a Claude que cree archivos nuevos',
+            'Modificar código existente con precisión',
+            'Revisar y aprobar cambios de forma segura'
+        ],
+        'sections': [
+            {
+                'type': 'text',
+                'title': 'Claude Code Puede Escribir Por Ti',
+                'content': '''Una de las superpoderes de Claude Code es que puede **modificar archivos directamente**. No solo te muestra código para copiar y pegar: realmente edita tus archivos.
+
+**El flujo es:**
+1. Tú describes qué quieres
+2. Claude propone los cambios
+3. Tú revisas y apruebas (o rechazas)
+4. Claude aplica los cambios
+
+Siempre tienes la última palabra antes de que se modifique algo.'''
+            },
+            {
+                'type': 'code',
+                'title': 'Creando un Archivo Nuevo',
+                'language': 'text',
+                'code': '''> Crea un archivo utils/helpers.py con una función que
+> valide si un string es un email válido
+
+Claude: Voy a crear el archivo con esta función:
+
+📄 utils/helpers.py (nuevo)
+┌─────────────────────────────────────────────┐
+│ import re                                    │
+│                                              │
+│ def is_valid_email(email: str) -> bool:     │
+│     """Valida si un string es email."""     │
+│     pattern = r'^[\w\.-]+@[\w\.-]+\.\w+$'   │
+│     return bool(re.match(pattern, email))   │
+└─────────────────────────────────────────────┘
+
+¿Creo este archivo? [y/n]'''
+            },
+            {
+                'type': 'text',
+                'title': 'Modificando Código Existente',
+                'content': '''Para modificar código existente, sé específico sobre:
+
+**Qué archivo:** "En el archivo main.py..."
+**Qué función:** "...en la función process_data..."
+**Qué cambio:** "...agrega validación para que no acepte valores negativos"
+
+Cuanto más contexto des, mejor será la modificación.'''
+            },
+            {
+                'type': 'example',
+                'title': 'Pidiendo Modificaciones',
+                'bad_example': {
+                    'prompt': 'Agrega validación',
+                    'issue': '¿Dónde? ¿Qué tipo de validación? ¿Para qué datos?'
+                },
+                'good_example': {
+                    'prompt': 'En la función createUser del archivo services/users.js, agrega validación para que el email sea requerido y tenga formato válido. Si falla, lanza un error descriptivo.',
+                    'why': 'Ubicación clara, tipo de validación específico, comportamiento esperado definido'
+                }
+            },
+            {
+                'type': 'tip',
+                'content': 'Si Claude propone un cambio que no te convence, dile "no, mejor hazlo de esta manera..." y describe tu preferencia. Es una conversación.'
+            },
+            {
+                'type': 'text',
+                'title': 'Tipos de Ediciones Comunes',
+                'content': '''**Agregar funcionalidad:**
+"Agrega un método delete() a la clase User"
+
+**Refactorizar:**
+"Convierte esta función en async/await en lugar de callbacks"
+
+**Arreglar:**
+"El botón no funciona, revisa el onClick y arréglalo"
+
+**Optimizar:**
+"Esta consulta SQL es lenta, optimízala"
+
+**Documentar:**
+"Agrega JSDoc a todas las funciones de este archivo"'''
+            },
+            {
+                'type': 'code',
+                'title': 'Revisando Cambios',
+                'language': 'text',
+                'code': '''Claude: Propongo estos cambios en src/api/users.js:
+
+📄 src/api/users.js
+─────────────────────────────────────
+  async function createUser(data) {
++   if (!data.email) {
++     throw new Error('Email es requerido');
++   }
++   if (!isValidEmail(data.email)) {
++     throw new Error('Formato de email inválido');
++   }
+    return await db.users.create(data);
+  }
+─────────────────────────────────────
+
+¿Aplico estos cambios? [y/n/e]
+(e = editar antes de aplicar)'''
+            }
+        ],
+        'next_lesson': 'claude-code-debugging'
+    },
+
+    'claude-code-debugging': {
+        'id': 'claude-code-debugging',
+        'title': 'Debugging con Claude Code',
+        'category': 'claude-code',
+        'difficulty': 'intermediate',
+        'duration': 20,
+        'xp_reward': 100,
+        'icon': '🐛',
+        'description': 'Encuentra y corrige errores más rápido con ayuda de IA.',
+        'objectives': [
+            'Describir errores efectivamente a Claude',
+            'Usar Claude para analizar stack traces',
+            'Aplicar correcciones de bugs sistemáticamente'
+        ],
+        'sections': [
+            {
+                'type': 'text',
+                'title': 'El Superpoder del Debugging',
+                'content': '''Debugging es donde Claude Code realmente brilla. En lugar de pasar horas buscando un bug, puedes:
+
+1. **Mostrar el error** a Claude
+2. **Dejar que analice** el código relevante
+3. **Obtener una explicación** de qué falla y por qué
+4. **Aplicar la corrección** directamente
+
+Es como tener un debugger experto que nunca se cansa y conoce tu código.'''
+            },
+            {
+                'type': 'code',
+                'title': 'Reportando un Error',
+                'language': 'text',
+                'code': '''> Tengo este error cuando ejecuto el servidor:
+>
+> TypeError: Cannot read property 'map' of undefined
+>     at UserList (src/components/UserList.jsx:12:18)
+>     at renderWithHooks (react-dom.development.js:14985)
+
+Claude: Analizando el error...
+
+El problema está en UserList.jsx línea 12. Estás intentando
+usar .map() en una variable que es undefined.
+
+Veo que users viene de un prop:
+```jsx
+const UserList = ({ users }) => {
+  return users.map(user => ...  // 💥 Error aquí
+```
+
+El componente padre no siempre pasa users, o tarda en cargar.
+
+**Solución:** Agregar un valor por defecto o verificación:
+```jsx
+const UserList = ({ users = [] }) => {
+  return users.map(user => ...
+```
+
+¿Aplico esta corrección?'''
+            },
+            {
+                'type': 'text',
+                'title': 'Cómo Describir Bugs Efectivamente',
+                'content': '''Para que Claude te ayude mejor, incluye:
+
+**1. El error exacto** (copia y pega el mensaje)
+
+**2. Qué esperabas** que pasara
+
+**3. Qué pasa realmente**
+
+**4. Cuándo ocurre** (siempre, a veces, en qué condiciones)
+
+**5. Qué ya intentaste** (opcional pero útil)'''
+            },
+            {
+                'type': 'example',
+                'title': 'Describiendo un Bug',
+                'bad_example': {
+                    'prompt': 'Mi código no funciona',
+                    'issue': 'Claude no tiene idea de qué código, qué error, ni qué significa "no funciona"'
+                },
+                'good_example': {
+                    'prompt': '''El formulario de registro no envía los datos al servidor.
+
+Error en consola: "Failed to fetch"
+Esperado: POST a /api/users debería crear usuario
+Real: La petición nunca llega al servidor
+Ocurre: Cada vez que hago submit
+Ya intenté: Verificar que el servidor esté corriendo (sí lo está)''',
+                    'why': 'Contexto completo que permite a Claude investigar el problema real'
+                }
+            },
+            {
+                'type': 'text',
+                'title': 'Debugging Paso a Paso',
+                'content': '''Puedes pedirle a Claude que debuggee sistemáticamente:
+
+**"Analiza este código paso a paso y dime dónde puede fallar"**
+
+Claude revisará:
+• Valores que podrían ser null/undefined
+• Casos edge no manejados
+• Errores de tipos
+• Problemas de async/await
+• Dependencias faltantes'''
+            },
+            {
+                'type': 'tip',
+                'content': 'Si el bug es intermitente, describe exactamente en qué condiciones ocurre. "Falla solo cuando el usuario no tiene foto de perfil" es información valiosa.'
+            },
+            {
+                'type': 'code',
+                'title': 'Pidiendo Investigación',
+                'language': 'text',
+                'code': '''> La función calculateTotal a veces devuelve NaN.
+> No sé cuándo ni por qué. ¿Puedes investigar?
+
+Claude: Voy a analizar calculateTotal...
+
+📄 src/utils/cart.js:45
+─────────────────────────────────
+function calculateTotal(items) {
+  return items.reduce((sum, item) => {
+    return sum + item.price * item.quantity;
+  }, 0);
+}
+─────────────────────────────────
+
+Encontré el problema. NaN puede ocurrir si:
+1. item.price es undefined (un producto sin precio)
+2. item.quantity es undefined
+3. items contiene elementos inválidos
+
+Sugiero esta corrección con validación:
+
+function calculateTotal(items) {
+  return items.reduce((sum, item) => {
+    const price = Number(item.price) || 0;
+    const qty = Number(item.quantity) || 0;
+    return sum + price * qty;
+  }, 0);
+}'''
+            }
+        ],
+        'next_lesson': 'claude-code-best-practices'
+    },
+
+    'claude-code-best-practices': {
+        'id': 'claude-code-best-practices',
+        'title': 'Mejores Prácticas',
+        'category': 'claude-code',
+        'difficulty': 'intermediate',
+        'duration': 15,
+        'xp_reward': 85,
+        'icon': '⭐',
+        'description': 'Consejos avanzados para sacar el máximo provecho de Claude Code.',
+        'objectives': [
+            'Escribir prompts efectivos para código',
+            'Saber cuándo usar Claude vs hacer manualmente',
+            'Verificar y validar código generado'
+        ],
+        'sections': [
+            {
+                'type': 'text',
+                'title': 'Reglas de Oro',
+                'content': '''Después de usar Claude Code extensivamente, estos son los principios más importantes:
+
+**1. Sé específico, no vago**
+❌ "Mejora este código"
+✅ "Refactoriza esta función para que sea más legible, extrae la validación a una función separada"
+
+**2. Da contexto**
+❌ "Agrega autenticación"
+✅ "Agrega autenticación JWT al endpoint /api/users, usando la librería jsonwebtoken que ya tenemos instalada"
+
+**3. Divide tareas grandes**
+❌ "Crea un sistema de usuarios completo"
+✅ "Primero, crea el modelo de usuario. Después hablaremos de los endpoints."'''
+            },
+            {
+                'type': 'text',
+                'title': 'Cuándo Usar Claude Code',
+                'content': '''**Claude Code es excelente para:**
+✅ Tareas repetitivas (crear muchos archivos similares)
+✅ Boilerplate (setup inicial, configuración)
+✅ Debugging (encontrar errores oscuros)
+✅ Explicar código que no entiendes
+✅ Refactorizar código legacy
+✅ Escribir tests
+✅ Documentación
+
+**Considera hacerlo tú cuando:**
+⚠️ La lógica es muy específica de tu negocio
+⚠️ Necesitas 100% de precisión (verifica siempre)
+⚠️ Estás aprendiendo un concepto nuevo (hazlo tú primero)'''
+            },
+            {
+                'type': 'tip',
+                'content': 'Claude Code es tu asistente, no tu reemplazo. Él propone, tú decides. Siempre entiende lo que el código hace antes de aceptarlo.'
+            },
+            {
+                'type': 'text',
+                'title': 'Verificando el Código Generado',
+                'content': '''**Antes de aceptar cambios de Claude:**
+
+1. **Lee el diff completo** - No aceptes a ciegas
+2. **Entiende la lógica** - ¿Sabes qué hace cada línea?
+3. **Considera edge cases** - ¿Qué pasa con datos inesperados?
+4. **Ejecuta tests** - Si los tienes, córrelos
+5. **Prueba manualmente** - Verifica que funcione como esperas
+
+**Es OK rechazar y pedir cambios:**
+"Esto funcionará, pero prefiero que uses async/await en lugar de promesas. ¿Puedes reescribirlo?"'''
+            },
+            {
+                'type': 'code',
+                'title': 'Iterando con Claude',
+                'language': 'text',
+                'code': '''> Crea una función para procesar pagos
+
+Claude: [propone función básica]
+
+> Bien, pero agrega manejo de errores para tarjeta rechazada
+
+Claude: [agrega try/catch y errores específicos]
+
+> Perfecto. Ahora agrega logging para debugging
+
+Claude: [agrega console.logs o logger]
+
+> Último detalle: usa nuestra clase PaymentError
+> en lugar de Error genérico
+
+Claude: [usa PaymentError]
+
+> ¡Listo! Aplica los cambios.'''
+            },
+            {
+                'type': 'text',
+                'title': 'Prompts Avanzados para Código',
+                'content': '''**Para código de alta calidad:**
+"Escribe esta función siguiendo las mejores prácticas de [lenguaje]. Incluye manejo de errores, tipos, y un test unitario."
+
+**Para entender código complejo:**
+"Explica este código como si fuera para alguien que sabe programar pero no conoce este framework."
+
+**Para refactoring seguro:**
+"Refactoriza esta función sin cambiar su comportamiento externo. Muéstrame antes/después."
+
+**Para debugging profundo:**
+"Actúa como un debugger experto. Analiza posibles causas de este error, del más probable al menos probable."'''
+            },
+            {
+                'type': 'text',
+                'title': 'Manteniendo el Contexto',
+                'content': '''Claude Code recuerda la conversación, pero el contexto tiene límites:
+
+**Para sesiones largas:**
+• Usa `/compact` para resumir y liberar espacio
+• Si Claude "olvida" algo, recuérdaselo brevemente
+
+**Para proyectos grandes:**
+• Trabaja en una carpeta/módulo a la vez
+• Da contexto sobre qué parte del proyecto estás tocando
+
+**Pro tip:** Si empiezas una nueva tarea muy diferente, considera iniciar una nueva sesión para tener contexto limpio.'''
+            }
+        ],
+        'next_lesson': None
     }
 }
 

@@ -390,6 +390,204 @@
         "Traducir textos": "Zero-Shot",
         "Analizar sentimiento": "Few-Shot + Formato"
       }
+    },
+    {
+      "id": "puzzle-comandos-claude-code",
+      "title": "Comandos de Claude Code",
+      "description": "Relaciona cada tarea con el prompt más efectivo para Claude Code.",
+      "difficulty": "easy",
+      "category": "claude-code",
+      "xp_reward": 40,
+      "time_limit": 300,
+      "grid_size": {
+        "rows": 5,
+        "cols": 5
+      },
+      "categories": [
+        {
+          "name": "Tarea",
+          "items": ["Entender código", "Crear archivo", "Buscar bug", "Refactorizar", "Agregar tests"]
+        },
+        {
+          "name": "Prompt Efectivo",
+          "items": ["Explica qué hace", "Crea un archivo para", "Por qué falla esto", "Mejora legibilidad", "Añade tests unitarios"]
+        }
+      ],
+      "clues": [
+        {
+          "text": "Para entender código existente, pide a Claude que te explique qué hace.",
+          "reveals": [["Entender código", "Explica qué hace"]]
+        },
+        {
+          "text": "Para crear archivos nuevos, especifica el propósito del archivo.",
+          "reveals": [["Crear archivo", "Crea un archivo para"]]
+        },
+        {
+          "text": "Para debugging, describe el comportamiento inesperado preguntando por qué falla.",
+          "reveals": [["Buscar bug", "Por qué falla esto"]]
+        },
+        {
+          "text": "Para refactorizar, enfócate en mejorar la legibilidad del código.",
+          "reveals": [["Refactorizar", "Mejora legibilidad"]]
+        },
+        {
+          "text": "Para testing, pide tests unitarios específicos para tu función.",
+          "reveals": [["Agregar tests", "Añade tests unitarios"]]
+        }
+      ],
+      "solution": {
+        "Entender código": "Explica qué hace",
+        "Crear archivo": "Crea un archivo para",
+        "Buscar bug": "Por qué falla esto",
+        "Refactorizar": "Mejora legibilidad",
+        "Agregar tests": "Añade tests unitarios"
+      }
+    },
+    {
+      "id": "puzzle-debugging-claude",
+      "title": "Debugging con Claude",
+      "description": "Identifica la mejor estrategia de debugging para cada situación.",
+      "difficulty": "medium",
+      "category": "claude-code",
+      "xp_reward": 55,
+      "time_limit": 360,
+      "grid_size": {
+        "rows": 4,
+        "cols": 4
+      },
+      "categories": [
+        {
+          "name": "Situación",
+          "items": ["Error de sintaxis", "Bug lógico", "Error de runtime", "Código lento"]
+        },
+        {
+          "name": "Estrategia",
+          "items": ["Mostrar el error", "Explicar paso a paso", "Incluir stack trace", "Pedir optimización"]
+        }
+      ],
+      "clues": [
+        {
+          "text": "Los errores de sintaxis se resuelven mejor mostrando el mensaje de error exacto.",
+          "reveals": [["Error de sintaxis", "Mostrar el error"]]
+        },
+        {
+          "text": "Los bugs lógicos requieren que Claude explique el flujo paso a paso.",
+          "reveals": [["Bug lógico", "Explicar paso a paso"]]
+        },
+        {
+          "text": "Los errores de runtime necesitan el stack trace completo para contexto.",
+          "reveals": [["Error de runtime", "Incluir stack trace"]]
+        },
+        {
+          "text": "El código lento se mejora pidiendo optimización específica.",
+          "reveals": [["Código lento", "Pedir optimización"]]
+        }
+      ],
+      "solution": {
+        "Error de sintaxis": "Mostrar el error",
+        "Bug lógico": "Explicar paso a paso",
+        "Error de runtime": "Incluir stack trace",
+        "Código lento": "Pedir optimización"
+      }
+    },
+    {
+      "id": "puzzle-flujo-trabajo-claude",
+      "title": "Flujo de Trabajo con IA",
+      "description": "Ordena los pasos de un flujo de trabajo efectivo con Claude Code.",
+      "difficulty": "medium",
+      "category": "claude-code",
+      "xp_reward": 50,
+      "time_limit": 360,
+      "grid_size": {
+        "rows": 4,
+        "cols": 4
+      },
+      "categories": [
+        {
+          "name": "Acción",
+          "items": ["Describir tarea", "Revisar cambios", "Probar código", "Iterar feedback"]
+        },
+        {
+          "name": "Orden",
+          "items": ["Paso 1", "Paso 2", "Paso 3", "Paso 4"]
+        }
+      ],
+      "clues": [
+        {
+          "text": "El primer paso siempre es describir claramente la tarea a Claude.",
+          "reveals": [["Describir tarea", "Paso 1"]]
+        },
+        {
+          "text": "Después de que Claude genera código, debes revisar los cambios propuestos.",
+          "reveals": [["Revisar cambios", "Paso 2"]]
+        },
+        {
+          "text": "Una vez revisados, prueba el código para verificar que funciona.",
+          "reveals": [["Probar código", "Paso 3"]]
+        },
+        {
+          "text": "Finalmente, itera con feedback si algo no está bien.",
+          "reveals": [["Iterar feedback", "Paso 4"]]
+        }
+      ],
+      "solution": {
+        "Describir tarea": "Paso 1",
+        "Revisar cambios": "Paso 2",
+        "Probar código": "Paso 3",
+        "Iterar feedback": "Paso 4"
+      }
+    },
+    {
+      "id": "puzzle-mejores-practicas-claude",
+      "title": "Mejores Prácticas Claude Code",
+      "description": "Identifica si cada práctica es recomendada al usar Claude Code.",
+      "difficulty": "hard",
+      "category": "claude-code",
+      "xp_reward": 65,
+      "time_limit": 420,
+      "grid_size": {
+        "rows": 5,
+        "cols": 5
+      },
+      "categories": [
+        {
+          "name": "Práctica",
+          "items": ["Dar contexto", "Aceptar todo", "Verificar código", "Ser específico", "Copiar sin leer"]
+        },
+        {
+          "name": "Recomendación",
+          "items": ["Esencial", "Evitar", "Obligatorio", "Muy útil", "Peligroso"]
+        }
+      ],
+      "clues": [
+        {
+          "text": "Dar contexto del proyecto es esencial para obtener código relevante.",
+          "reveals": [["Dar contexto", "Esencial"]]
+        },
+        {
+          "text": "Aceptar todas las sugerencias sin revisar es algo que debes evitar.",
+          "reveals": [["Aceptar todo", "Evitar"]]
+        },
+        {
+          "text": "Verificar que el código funciona es obligatorio antes de usarlo.",
+          "reveals": [["Verificar código", "Obligatorio"]]
+        },
+        {
+          "text": "Ser específico en tus peticiones es muy útil para mejores resultados.",
+          "reveals": [["Ser específico", "Muy útil"]]
+        },
+        {
+          "text": "Copiar código sin leerlo es peligroso y puede introducir bugs.",
+          "reveals": [["Copiar sin leer", "Peligroso"]]
+        }
+      ],
+      "solution": {
+        "Dar contexto": "Esencial",
+        "Aceptar todo": "Evitar",
+        "Verificar código": "Obligatorio",
+        "Ser específico": "Muy útil",
+        "Copiar sin leer": "Peligroso"
+      }
     }
   ],
   "categories": [
@@ -416,6 +614,12 @@
       "name": "Aplicaciones",
       "icon": "💼",
       "description": "Casos de uso prácticos"
+    },
+    {
+      "id": "claude-code",
+      "name": "Claude Code",
+      "icon": "🤖",
+      "description": "Programación asistida por IA con Claude Code"
     }
   ],
   "difficulty_settings": {

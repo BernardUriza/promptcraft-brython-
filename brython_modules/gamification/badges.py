@@ -224,6 +224,53 @@ BADGES = {
         'condition': {'type': 'all_techniques', 'value': True},
     },
 
+    # === Badges de Claude Code ===
+    'claude_apprentice': {
+        'id': 'claude_apprentice',
+        'name': 'Aprendiz de Claude',
+        'description': 'Completa tu primera lección de Claude Code',
+        'icon': '🤖',
+        'rarity': 'common',
+        'category': 'claude-code',
+        'condition': {'type': 'lesson_complete', 'value': 'claude-code-intro'},
+    },
+    'claude_navigator': {
+        'id': 'claude_navigator',
+        'name': 'Navegante de Código',
+        'description': 'Aprende a navegar proyectos con Claude Code',
+        'icon': '🧭',
+        'rarity': 'common',
+        'category': 'claude-code',
+        'condition': {'type': 'lesson_complete', 'value': 'claude-code-navigation'},
+    },
+    'claude_debugger': {
+        'id': 'claude_debugger',
+        'name': 'Cazador de Bugs',
+        'description': 'Domina el debugging con Claude Code',
+        'icon': '🐛',
+        'rarity': 'rare',
+        'category': 'claude-code',
+        'condition': {'type': 'lesson_complete', 'value': 'claude-code-debugging'},
+    },
+    'claude_master': {
+        'id': 'claude_master',
+        'name': 'Maestro de Claude Code',
+        'description': 'Completa todas las lecciones de Claude Code',
+        'icon': '🎓',
+        'rarity': 'epic',
+        'category': 'claude-code',
+        'condition': {'type': 'all_claude_lessons', 'value': True},
+    },
+    'claude_puzzle_solver': {
+        'id': 'claude_puzzle_solver',
+        'name': 'Rompecabezas IA',
+        'description': 'Resuelve todos los puzzles de Claude Code',
+        'icon': '🧩',
+        'rarity': 'rare',
+        'category': 'claude-code',
+        'condition': {'type': 'all_claude_puzzles', 'value': True},
+    },
+
     # === Badges Especiales ===
     'early_bird': {
         'id': 'early_bird',

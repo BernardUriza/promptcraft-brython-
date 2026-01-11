@@ -104,6 +104,62 @@
       "content": "Empieza con verbos claros: 'Analiza', 'Compara', 'Resume', 'Genera', 'Traduce', 'Evalúa'. Evita 'Intenta' o 'Podrías'.",
       "category": "fundamentals",
       "icon": "💪"
+    },
+    {
+      "id": "tip-claude-context",
+      "title": "Claude Code: Contexto es clave",
+      "content": "En Claude Code, tu proyecto ES el contexto. Claude puede leer tus archivos, así que aprovéchalo: 'basándote en el estilo de este proyecto, agrega...'",
+      "category": "claude-code",
+      "icon": "🤖"
+    },
+    {
+      "id": "tip-claude-specific-files",
+      "title": "Sé específico con archivos",
+      "content": "En Claude Code, menciona archivos específicos: 'en src/utils.py, agrega una función para validar emails'. Claude los encontrará y editará directamente.",
+      "category": "claude-code",
+      "icon": "📁"
+    },
+    {
+      "id": "tip-claude-explain-first",
+      "title": "Pide explicaciones primero",
+      "content": "Antes de modificar código desconocido, pide: 'Explica qué hace esta función antes de modificarla'. Entenderás mejor el cambio.",
+      "category": "claude-code",
+      "icon": "🔍"
+    },
+    {
+      "id": "tip-claude-small-steps",
+      "title": "Pasos pequeños en Claude Code",
+      "content": "Haz cambios incrementales y verifica cada uno. Es más fácil identificar problemas cuando los cambios son pequeños y frecuentes.",
+      "category": "claude-code",
+      "icon": "👣"
+    },
+    {
+      "id": "tip-claude-error-paste",
+      "title": "Pega errores completos",
+      "content": "Cuando tengas un error, pega el mensaje completo incluyendo el stack trace. Claude Code puede rastrear exactamente dónde está el problema.",
+      "category": "claude-code",
+      "icon": "🐛"
+    },
+    {
+      "id": "tip-claude-review",
+      "title": "Revisa antes de aceptar",
+      "content": "Claude Code te muestra los cambios antes de aplicarlos. SIEMPRE revisa el código generado. Tú eres responsable del código final.",
+      "category": "claude-code",
+      "icon": "👁️"
+    },
+    {
+      "id": "tip-claude-natural",
+      "title": "Habla naturalmente",
+      "content": "Con Claude Code puedes escribir como si hablaras con un colega: 'este botón no funciona, ¿puedes ver qué pasa?' Es conversacional.",
+      "category": "claude-code",
+      "icon": "💬"
+    },
+    {
+      "id": "tip-claude-tests",
+      "title": "Pide tests siempre",
+      "content": "Después de que Claude genere código, pide: 'agrega tests para esta función'. Verificar código generado con tests es una buena práctica.",
+      "category": "claude-code",
+      "icon": "✅"
     }
   ],
   "technique_cards": [
@@ -192,6 +248,30 @@
       "name": "Comparación",
       "template": "Compara [A] y [B] en términos de:\n- [CRITERIO 1]\n- [CRITERIO 2]\n\nFormato: tabla comparativa.",
       "icon": "⚖️"
+    },
+    {
+      "id": "claude-explain",
+      "name": "Explicar código",
+      "template": "Explica qué hace [ARCHIVO/FUNCIÓN]. Describe:\n- Propósito principal\n- Entradas y salidas\n- Flujo de datos",
+      "icon": "🤖"
+    },
+    {
+      "id": "claude-debug",
+      "name": "Debug con Claude",
+      "template": "Este código produce [ERROR]. El comportamiento esperado es [ESPERADO] pero obtengo [ACTUAL].\n\n[PEGAR ERROR COMPLETO]",
+      "icon": "🐛"
+    },
+    {
+      "id": "claude-refactor",
+      "name": "Refactorizar",
+      "template": "Refactoriza [ARCHIVO/FUNCIÓN] para mejorar:\n- [ASPECTO 1]\n- [ASPECTO 2]\n\nMantén la funcionalidad existente.",
+      "icon": "🔧"
+    },
+    {
+      "id": "claude-feature",
+      "name": "Nueva función",
+      "template": "Agrega una función en [ARCHIVO] que:\n- [REQUISITO 1]\n- [REQUISITO 2]\n\nSigue el estilo del proyecto existente.",
+      "icon": "✨"
     }
   ]
 }

@@ -1,115 +1,116 @@
-# PromptCraft - Curso Interactivo de Prompt Engineering
+# PromptCraft - Aprende Prompt Engineering + Claude Code
 
-Aplicacion web interactiva para aprender Prompt Engineering, construida con Brython (Python en el navegador) y Tailwind CSS.
+Un curso interactivo y divertido para aprender a comunicarte con inteligencias artificiales.
 
-## Caracteristicas
+## ¿Qué vas a aprender?
 
-- **Lecciones Interactivas**: 10+ lecciones que cubren desde fundamentos hasta tecnicas avanzadas
-- **Logic Grid Puzzles**: Puzzles de logica estilo Zebra para practicar conceptos
-- **Gamificacion Completa**: Sistema de XP, niveles, badges y rachas
-- **Playground**: Experimenta con prompts en tiempo real
-- **Progreso Persistente**: Tu progreso se guarda en localStorage
+- **Prompt Engineering**: Cómo escribir instrucciones efectivas para ChatGPT, Claude, y otros modelos de IA
+- **Claude Code**: Programar asistido por IA directamente en tu terminal
+- **Práctica con puzzles**: Resuelve retos lógicos mientras aprendes conceptos
 
-## Estructura del Proyecto
+## Comenzar en 2 minutos
+
+### Opción 1: Ver online (más fácil)
+1. Ve a la página del curso: `https://TU_USUARIO.github.io/promptcraft-brython-/`
+
+### Opción 2: Tu propia copia (para modificar)
+1. Haz clic en el botón **Fork** arriba a la derecha
+2. En tu fork, ve a **Settings** → **Pages**
+3. En "Source" selecciona **Deploy from a branch**
+4. Selecciona la rama `main` y carpeta `/ (root)`
+5. Espera 1-2 minutos y visita `https://TU_USUARIO.github.io/promptcraft-brython-/`
+
+### Opción 3: En tu computadora
+1. Descarga o clona el repositorio
+2. Abre el archivo `index.html` en tu navegador
+3. ¡Listo! No necesitas instalar nada
+
+## ¿Qué incluye el curso?
+
+| Módulo | Descripción | Lecciones |
+|--------|-------------|-----------|
+| Fundamentos | Qué es Prompt Engineering y cómo empezar | 3 |
+| Técnicas | Zero-shot, Few-shot, Chain of Thought | 4 |
+| Claude Code | Programar con IA en tu terminal | 6 |
+| Avanzado | Técnicas profesionales | 2 |
+| Aplicaciones | Código, escritura, análisis | 2 |
+
+También incluye:
+- 12 puzzles interactivos de lógica
+- Sistema de XP y niveles (como Duolingo)
+- Badges coleccionables
+- Rachas diarias para mantener el hábito
+
+## Estructura simplificada
 
 ```
-promptcraft-brython/
-├── index.html              # Punto de entrada principal
-├── brython_modules/         # Modulos Python para Brython
-│   ├── __init__.py
-│   ├── app.py              # Aplicacion principal
-│   ├── router.py           # Sistema de enrutamiento SPA
-│   ├── state.py            # Gestion de estado
-│   ├── components/         # Componentes UI reutilizables
-│   │   ├── base.py         # Clase base Component
-│   │   ├── button.py       # Botones
-│   │   ├── card.py         # Tarjetas
-│   │   ├── modal.py        # Modales
-│   │   ├── tabs.py         # Pestanas
-│   │   ├── progress.py     # Barras de progreso
-│   │   ├── grid.py         # Grids de logica
-│   │   ├── hints.py        # Sistema de pistas
-│   │   ├── toast.py        # Notificaciones
-│   │   ├── code_editor.py  # Editor de codigo
-│   │   └── badge_display.py # Display de badges
-│   ├── pages/              # Paginas de la aplicacion
-│   │   ├── home.py         # Pagina principal
-│   │   ├── lessons.py      # Lista de lecciones
-│   │   ├── lesson_detail.py # Detalle de leccion
-│   │   ├── puzzles.py      # Lista de puzzles
-│   │   ├── puzzle.py       # Puzzle individual
-│   │   ├── playground.py   # Playground de prompts
-│   │   ├── profile.py      # Perfil de usuario
-│   │   └── badges.py       # Coleccion de badges
-│   ├── puzzles/            # Sistema de puzzles
-│   │   ├── engine.py       # Motor del puzzle
-│   │   ├── logic_puzzle.py # Componente de puzzle
-│   │   ├── timer.py        # Temporizador
-│   │   ├── solver.py       # Solucionador/validador
-│   │   ├── loader.py       # Cargador de puzzles
-│   │   └── generator.py    # Generador de puzzles
-│   ├── gamification/       # Sistema de gamificacion
-│   │   ├── xp.py           # Sistema de XP
-│   │   ├── levels.py       # Sistema de niveles
-│   │   ├── badges.py       # Sistema de badges
-│   │   ├── streaks.py      # Sistema de rachas
-│   │   ├── achievements.py # Logros
-│   │   └── leaderboard.py  # Tabla de posiciones
-│   └── lessons/            # Sistema de lecciones
-│       ├── content.py      # Contenido de lecciones
-│       ├── loader.py       # Cargador de lecciones
-│       ├── renderer.py     # Renderizador de contenido
-│       └── progress.py     # Progreso de lecciones
-├── static/
-│   └── css/
-│       └── custom.css      # Estilos personalizados
-└── data/                   # Datos JSON
-    ├── puzzles.json        # Definiciones de puzzles
-    ├── achievements.json   # Logros y retos
-    └── tips.json           # Tips y templates
+promptcraft-brython-/
+├── index.html          ← Abre esto en el navegador
+├── data/
+│   ├── puzzles.json    ← Los puzzles están aquí
+│   └── tips.json       ← Tips y consejos
+└── brython_modules/
+    └── lessons/
+        └── content.py  ← El contenido de las lecciones
 ```
 
-## Como Usar
+## Cómo modificar el contenido
 
-1. Abre `index.html` en un navegador web moderno
-2. La aplicacion cargara automaticamente usando Brython
-3. Navega usando el menu superior
-4. Tu progreso se guarda automaticamente
+### Agregar un tip nuevo
 
-## Tecnologias
+1. Abre `data/tips.json`
+2. Busca `"daily_tips": [`
+3. Agrega tu tip al final:
+```json
+{
+  "id": "tip-mi-consejo",
+  "title": "Mi Consejo",
+  "content": "El texto de tu consejo aquí...",
+  "category": "fundamentals",
+  "icon": "💡"
+}
+```
+4. Guarda y recarga la página
 
-- **Brython 3.12**: Python 3 en el navegador
-- **Tailwind CSS**: Framework de utilidades CSS
-- **localStorage**: Persistencia de datos del usuario
+### Modificar una lección
 
-## Desarrollo
+1. Abre `brython_modules/lessons/content.py`
+2. Busca `EMBEDDED_LESSONS = [`
+3. Encuentra la lección que quieres modificar
+4. Edita el contenido en el campo `'content':`
+5. Guarda y recarga la página
 
-Para modificar el proyecto:
+## Preguntas Frecuentes
 
-1. Edita los archivos Python en `brython_modules/`
-2. Los cambios se reflejan al recargar la pagina
-3. Usa la consola del navegador para debug (Brython imprime ahi)
+### ¿Por qué no funciona al abrir el archivo?
+Algunos navegadores bloquean archivos locales. Prueba con Firefox o usa un servidor simple:
+```bash
+python -m http.server 8000
+```
+Luego abre `http://localhost:8000`
 
-## Contenido del Curso
+### ¿Dónde se guarda mi progreso?
+En el almacenamiento local de tu navegador (localStorage). Si borras los datos del navegador, perderás el progreso.
 
-### Fundamentos
-- Introduccion al Prompt Engineering
-- Anatomia de un Prompt
+### ¿Puedo usarlo sin internet?
+Sí, una vez cargado funciona completamente offline.
 
-### Tecnicas
-- Zero-Shot Prompting
-- Few-Shot Prompting
-- Chain of Thought (CoT)
-- Role Prompting
+### ¿Cómo contribuyo con más contenido?
+¡Mira el archivo [CONTRIBUTING.md](CONTRIBUTING.md) para una guía paso a paso!
 
-### Avanzado
-- Self-Consistency
-- Prompt Chaining
+### ¿Qué es Brython?
+Es Python que corre en el navegador. No necesitas saber Python para usar el curso, pero si lo sabes, puedes ver cómo funciona todo.
 
-### Aplicaciones
-- Prompts para Codigo
-- Prompts para Escritura
+## Tecnologías usadas
+
+- **Brython**: Python en el navegador (sin servidor)
+- **Tailwind CSS**: Estilos bonitos sin escribir CSS
+- **localStorage**: Guarda tu progreso localmente
 
 ## Licencia
 
-Proyecto educativo de uso libre.
+Proyecto educativo de uso libre. Modifícalo, compártelo, aprende con él.
+
+---
+
+¿Te fue útil? Dale una estrella en GitHub.
