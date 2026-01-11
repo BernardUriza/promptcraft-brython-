@@ -590,7 +590,7 @@ def _show_feedback(container, exercise, results, error_msg, user_prompt):
 
             # Dar XP
             from ..gamification.xp import award_xp
-            award_xp(exercise['xp_reward'], f"Completar ejercicio: {exercise['title']}")
+            award_xp(state, 'practice', exercise['xp_reward'], None, f"Completar ejercicio: {exercise['title']}")
 
             success_msg = html.DIV(
                 Class="bg-green-100 border border-green-300 rounded-xl p-4 mb-4 text-center"

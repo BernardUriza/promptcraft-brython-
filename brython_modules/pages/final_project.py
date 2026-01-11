@@ -355,7 +355,7 @@ def _submit_project():
 
         # Dar XP y badge
         from ..gamification.xp import award_xp
-        award_xp(200, "Completar Proyecto Final")
+        award_xp(state, 'final_project', 200, None, "Completar Proyecto Final")
 
         # Otorgar badge de graduación
         badges_earned = state.data.get('badges', [])

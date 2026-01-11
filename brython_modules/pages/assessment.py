@@ -429,7 +429,7 @@ def _finish_assessment():
 
     # Dar XP por completar
     from ..gamification.xp import award_xp
-    award_xp(50, "Completar evaluación diagnóstica")
+    award_xp(state, 'assessment', 50, None, "Completar evaluación diagnóstica")
 
     from ..router import get_router
     router = get_router()

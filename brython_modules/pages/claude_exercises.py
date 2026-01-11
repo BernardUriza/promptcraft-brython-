@@ -347,7 +347,7 @@ def _handle_answer(option_idx, option_data, exercise):
 
             # Dar XP
             from ..gamification.xp import award_xp
-            award_xp(exercise['xp'], f"Ejercicio Claude Code: {exercise['title']}")
+            award_xp(state, 'claude_exercise', exercise['xp'], None, f"Ejercicio Claude Code: {exercise['title']}")
 
             xp_msg = html.DIV(Class="bg-indigo-100 border border-indigo-300 rounded-xl p-4 text-center")
             xp_msg <= html.P(f"🎉 +{exercise['xp']} XP ganados", Class="text-indigo-800 font-bold")
