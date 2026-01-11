@@ -115,13 +115,19 @@ def _render_hero(state, level_info):
 
 def _render_quick_actions():
     """Renderiza acciones rápidas."""
-    section = html.DIV(Class="grid grid-cols-2 md:grid-cols-4 gap-4")
+    section = html.DIV(Class="space-y-4")
+
+    # Título de sección
+    section <= html.H2("Explora el Curso", Class="text-lg font-semibold text-gray-800")
+
+    # Grid principal
+    grid = html.DIV(Class="grid grid-cols-2 md:grid-cols-4 gap-4")
 
     actions = [
         ('📚', 'Lecciones', 'lessons', 'bg-blue-50 hover:bg-blue-100 border-blue-200'),
+        ('✍️', 'Práctica', 'practice', 'bg-teal-50 hover:bg-teal-100 border-teal-200'),
         ('🧩', 'Puzzles', 'puzzles', 'bg-purple-50 hover:bg-purple-100 border-purple-200'),
-        ('🎮', 'Playground', 'playground', 'bg-green-50 hover:bg-green-100 border-green-200'),
-        ('🏆', 'Badges', 'badges', 'bg-yellow-50 hover:bg-yellow-100 border-yellow-200'),
+        ('🤖', 'Claude Code', 'claude-exercises', 'bg-cyan-50 hover:bg-cyan-100 border-cyan-200'),
     ]
 
     for icon, label, route, colors in actions:
@@ -131,7 +137,30 @@ def _render_quick_actions():
             Class=f"p-6 rounded-xl border text-center cursor-pointer transition-colors {colors}"
         )
         card.bind('click', lambda e, r=route: navigate(r))
-        section <= card
+        grid <= card
+
+    section <= grid
+
+    # Fila secundaria con más acciones
+    grid2 = html.DIV(Class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4")
+
+    secondary_actions = [
+        ('🎮', 'Playground', 'playground', 'bg-green-50 hover:bg-green-100 border-green-200'),
+        ('📝', 'Test Inicial', 'assessment', 'bg-orange-50 hover:bg-orange-100 border-orange-200'),
+        ('🎓', 'Proyecto Final', 'final-project', 'bg-indigo-50 hover:bg-indigo-100 border-indigo-200'),
+        ('🏆', 'Badges', 'badges', 'bg-yellow-50 hover:bg-yellow-100 border-yellow-200'),
+    ]
+
+    for icon, label, route, colors in secondary_actions:
+        card = html.DIV(
+            html.SPAN(icon, Class="text-3xl mb-2 block") +
+            html.SPAN(label, Class="font-medium text-gray-700"),
+            Class=f"p-6 rounded-xl border text-center cursor-pointer transition-colors {colors}"
+        )
+        card.bind('click', lambda e, r=route: navigate(r))
+        grid2 <= card
+
+    section <= grid2
 
     return section
 

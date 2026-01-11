@@ -54,6 +54,7 @@ class App:
         nav_items = [
             ('home', 'Inicio', '🏠'),
             ('lessons', 'Lecciones', '📚'),
+            ('practice', 'Práctica', '✍️'),
             ('puzzles', 'Puzzles', '🧩'),
             ('playground', 'Playground', '💻'),
             ('profile', 'Perfil', '👤'),
@@ -160,12 +161,19 @@ class App:
             puzzle_page,
             playground_page,
             profile_page,
-            badges_page
+            badges_page,
+            # Nuevas páginas de práctica y evaluación
+            assessment_page,
+            practice_page,
+            practice_exercise_page,
+            claude_exercises_page,
+            claude_exercise_detail_page,
+            final_project_page
         )
 
         router = self.router
 
-        # Registrar rutas
+        # Registrar rutas principales
         router.register('home', home_page, {'title': 'Inicio'})
         router.register('lessons', lessons_page, {'title': 'Lecciones'})
         router.register('lesson/:id', lesson_detail_page, {'title': 'Lección'})
@@ -174,6 +182,14 @@ class App:
         router.register('playground', playground_page, {'title': 'Playground'})
         router.register('profile', profile_page, {'title': 'Mi Perfil'})
         router.register('badges', badges_page, {'title': 'Badges'})
+
+        # Nuevas rutas de práctica y evaluación
+        router.register('assessment', assessment_page, {'title': 'Evaluación Diagnóstica'})
+        router.register('practice', practice_page, {'title': 'Práctica de Prompts'})
+        router.register('practice/:id', practice_exercise_page, {'title': 'Ejercicio de Práctica'})
+        router.register('claude-exercises', claude_exercises_page, {'title': 'Ejercicios Claude Code'})
+        router.register('claude-exercise/:id', claude_exercise_detail_page, {'title': 'Ejercicio Claude'})
+        router.register('final-project', final_project_page, {'title': 'Proyecto Final'})
 
         # Hook para actualizar navbar después de navegación
         def update_navbar_stats(context):

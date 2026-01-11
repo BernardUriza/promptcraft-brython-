@@ -308,6 +308,35 @@ BADGES = {
         'category': 'special',
         'condition': {'type': 'all_badges', 'value': True},
     },
+
+    # === Badge de Graduación ===
+    'graduate': {
+        'id': 'graduate',
+        'name': 'Graduado de PromptCraft',
+        'description': 'Completa el Proyecto Final del curso',
+        'icon': '🎓',
+        'rarity': 'legendary',
+        'category': 'achievement',
+        'condition': {'type': 'project_complete', 'value': True},
+    },
+    'practice_master': {
+        'id': 'practice_master',
+        'name': 'Maestro de la Práctica',
+        'description': 'Completa todos los ejercicios de práctica',
+        'icon': '✍️',
+        'rarity': 'epic',
+        'category': 'achievement',
+        'condition': {'type': 'all_practice', 'value': True},
+    },
+    'assessment_complete': {
+        'id': 'assessment_complete',
+        'name': 'Autoconocimiento',
+        'description': 'Completa la evaluación diagnóstica',
+        'icon': '📊',
+        'rarity': 'common',
+        'category': 'achievement',
+        'condition': {'type': 'assessment_complete', 'value': True},
+    },
 }
 
 
