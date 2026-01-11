@@ -3,20 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guía de Inicio - PromptCraft + Claude Code</title>
+    <title>Guía de IA para Principiantes - Aprende y Gana Dinero</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         html { scroll-behavior: smooth; }
-        .step-number {
-            width: 3rem;
-            height: 3rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            font-weight: bold;
-            font-size: 1.25rem;
-        }
         .section-card {
             transition: transform 0.2s, box-shadow 0.2s;
         }
@@ -24,34 +14,26 @@
             transform: translateY(-2px);
             box-shadow: 0 10px 40px rgba(0,0,0,0.1);
         }
-        .code-block {
-            background: #1e1e1e;
-            color: #d4d4d4;
-            border-radius: 8px;
-            padding: 1rem;
-            font-family: 'Consolas', 'Monaco', monospace;
-            overflow-x: auto;
+        .money-glow {
+            box-shadow: 0 0 30px rgba(34, 197, 94, 0.3);
         }
-        .time-badge {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
-        @keyframes pulse-slow {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
-        }
-        .pulse-slow { animation: pulse-slow 2s infinite; }
+        .float { animation: float 3s ease-in-out infinite; }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
     <!-- Header -->
-    <header class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-8 sticky top-0 z-50 shadow-lg">
+    <header class="bg-gradient-to-r from-emerald-600 to-teal-600 text-white py-8 sticky top-0 z-50 shadow-lg">
         <div class="max-w-5xl mx-auto px-6">
             <div class="flex justify-between items-center">
                 <div>
-                    <h1 class="text-3xl font-bold">🚀 Tu Viaje en IA Comienza Hoy</h1>
-                    <p class="text-indigo-200 mt-1">Guía de inicio para PromptCraft + Claude Code</p>
+                    <h1 class="text-3xl font-bold">🤖 Inteligencia Artificial desde Cero</h1>
+                    <p class="text-emerald-200 mt-1">Aprende a usar IA y descubre cómo ganar dinero con ella</p>
                 </div>
-                <div class="time-badge px-4 py-2 rounded-full text-sm font-medium">
+                <div class="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">
                     ⏱️ 45 minutos
                 </div>
             </div>
@@ -59,500 +41,561 @@
     </header>
 
     <!-- Navigation -->
-    <nav class="bg-white shadow-sm py-4 sticky top-24 z-40">
+    <nav class="bg-white shadow-sm py-4 sticky top-20 z-40">
         <div class="max-w-5xl mx-auto px-6">
             <div class="flex flex-wrap gap-2 justify-center text-sm">
-                <a href="#intro" class="px-3 py-1 rounded-full bg-gray-100 hover:bg-indigo-100 hover:text-indigo-700">Intro</a>
-                <a href="#github" class="px-3 py-1 rounded-full bg-gray-100 hover:bg-indigo-100 hover:text-indigo-700">GitHub</a>
-                <a href="#fork" class="px-3 py-1 rounded-full bg-gray-100 hover:bg-indigo-100 hover:text-indigo-700">Tu Copia</a>
-                <a href="#curso" class="px-3 py-1 rounded-full bg-gray-100 hover:bg-indigo-100 hover:text-indigo-700">El Curso</a>
-                <a href="#claudecode" class="px-3 py-1 rounded-full bg-gray-100 hover:bg-indigo-100 hover:text-indigo-700">Claude Code</a>
-                <a href="#mcp" class="px-3 py-1 rounded-full bg-gray-100 hover:bg-indigo-100 hover:text-indigo-700">MCPs</a>
-                <a href="#siguiente" class="px-3 py-1 rounded-full bg-gray-100 hover:bg-indigo-100 hover:text-indigo-700">Siguientes Pasos</a>
+                <a href="#que-es-ia" class="px-3 py-1 rounded-full bg-gray-100 hover:bg-emerald-100 hover:text-emerald-700">¿Qué es IA?</a>
+                <a href="#los-chats" class="px-3 py-1 rounded-full bg-gray-100 hover:bg-emerald-100 hover:text-emerald-700">Los 3 Chats</a>
+                <a href="#como-usar" class="px-3 py-1 rounded-full bg-gray-100 hover:bg-emerald-100 hover:text-emerald-700">Cómo Usarlos</a>
+                <a href="#ganar-dinero" class="px-3 py-1 rounded-full bg-green-100 text-green-700 hover:bg-green-200 font-medium">💰 Ganar Dinero</a>
+                <a href="#practica" class="px-3 py-1 rounded-full bg-gray-100 hover:bg-emerald-100 hover:text-emerald-700">Práctica</a>
             </div>
         </div>
     </nav>
 
     <main class="max-w-5xl mx-auto px-6 py-12">
 
-        <!-- Intro Section -->
-        <section id="intro" class="mb-16">
+        <!-- Intro -->
+        <section class="mb-12 text-center">
+            <div class="inline-block text-6xl mb-4 float">🤖</div>
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">Hoy vas a entender la IA de una vez por todas</h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                Y más importante: vas a aprender <strong>cómo usarla para ganar dinero</strong>.
+                No necesitas saber programar ni ser experto en tecnología.
+            </p>
+        </section>
+
+        <!-- Sección 1: ¿Qué es IA? -->
+        <section id="que-es-ia" class="mb-16">
             <div class="section-card bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
-                <div class="flex items-start gap-4">
-                    <div class="step-number bg-indigo-100 text-indigo-600">1</div>
-                    <div class="flex-1">
-                        <div class="flex items-center gap-2 mb-2">
-                            <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">5 min</span>
-                        </div>
-                        <h2 class="text-2xl font-bold text-gray-800 mb-4">¿Qué vamos a hacer hoy?</h2>
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="bg-blue-100 text-blue-600 w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">1</span>
+                    <div>
+                        <span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">5 min</span>
+                        <h2 class="text-2xl font-bold text-gray-800">¿Qué es la Inteligencia Artificial?</h2>
+                    </div>
+                </div>
 
-                        <div class="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-6 mb-6">
-                            <h3 class="font-semibold text-lg mb-3">🎯 Objetivos de esta sesión:</h3>
-                            <ul class="space-y-2">
-                                <li class="flex items-center gap-2">
-                                    <span class="text-green-500">✓</span>
-                                    <span>Entender qué es la Inteligencia Artificial y cómo comunicarte con ella</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <span class="text-green-500">✓</span>
-                                    <span>Crear tu cuenta de GitHub (gratis)</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <span class="text-green-500">✓</span>
-                                    <span>Tener tu propia copia del curso PromptCraft</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <span class="text-green-500">✓</span>
-                                    <span>Instalar Claude Code (tu asistente de programación)</span>
-                                </li>
-                                <li class="flex items-center gap-2">
-                                    <span class="text-green-500">✓</span>
-                                    <span>Conectar herramientas extra (MCPs)</span>
-                                </li>
-                            </ul>
-                        </div>
+                <div class="bg-blue-50 rounded-xl p-6 mb-6">
+                    <h3 class="font-semibold text-lg mb-3">🧠 Explicación simple:</h3>
+                    <p class="text-gray-700 text-lg leading-relaxed">
+                        Una IA es como un <strong>asistente super inteligente</strong> que ha leído millones de libros,
+                        artículos y sitios web. Puedes hacerle preguntas, pedirle que escriba cosas,
+                        que te explique conceptos, o que te ayude a resolver problemas.
+                    </p>
+                </div>
 
-                        <div class="grid md:grid-cols-2 gap-4">
-                            <div class="bg-blue-50 rounded-lg p-4">
-                                <h4 class="font-semibold text-blue-800 mb-2">📚 ¿Qué es PromptCraft?</h4>
-                                <p class="text-blue-700 text-sm">Un curso interactivo (tipo Duolingo) para aprender a comunicarte con IAs como ChatGPT y Claude. ¡Ganarás puntos y badges mientras aprendes!</p>
-                            </div>
-                            <div class="bg-purple-50 rounded-lg p-4">
-                                <h4 class="font-semibold text-purple-800 mb-2">🤖 ¿Qué es Claude Code?</h4>
-                                <p class="text-purple-700 text-sm">Un asistente de IA que vive en tu terminal y te ayuda a programar. ¡Puede leer tu código, explicarlo, modificarlo y más!</p>
-                            </div>
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-green-50 rounded-xl p-5">
+                        <h4 class="font-semibold text-green-800 mb-3">✅ Lo que SÍ puede hacer:</h4>
+                        <ul class="space-y-2 text-green-700">
+                            <li>• Escribir textos, emails, posts</li>
+                            <li>• Explicarte cualquier tema</li>
+                            <li>• Traducir idiomas</li>
+                            <li>• Resumir documentos largos</li>
+                            <li>• Ayudarte a pensar y planear</li>
+                            <li>• Generar ideas creativas</li>
+                            <li>• Corregir y mejorar lo que escribes</li>
+                        </ul>
+                    </div>
+                    <div class="bg-red-50 rounded-xl p-5">
+                        <h4 class="font-semibold text-red-800 mb-3">❌ Lo que NO puede hacer:</h4>
+                        <ul class="space-y-2 text-red-700">
+                            <li>• Navegar internet en tiempo real*</li>
+                            <li>• Acceder a tu computadora</li>
+                            <li>• Recordar conversaciones pasadas**</li>
+                            <li>• Tomar decisiones por ti</li>
+                            <li>• Garantizar que todo sea 100% correcto</li>
+                            <li>• Reemplazar tu criterio humano</li>
+                        </ul>
+                        <p class="text-xs text-red-500 mt-3">*Algunos sí pueden, **algunos tienen memoria</p>
+                    </div>
+                </div>
+
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r-lg">
+                    <p class="text-yellow-800">
+                        <strong>💡 Punto clave:</strong> La IA no "piensa" como humano. Es muy buena generando texto
+                        que suena correcto, pero <strong>siempre debes verificar</strong> la información importante.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 2: Los 3 Chats -->
+        <section id="los-chats" class="mb-16">
+            <div class="section-card bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="bg-purple-100 text-purple-600 w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">2</span>
+                    <div>
+                        <span class="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded-full">10 min</span>
+                        <h2 class="text-2xl font-bold text-gray-800">Los 3 Chats de IA que Debes Conocer</h2>
+                    </div>
+                </div>
+
+                <p class="text-gray-600 mb-6">
+                    Hay tres asistentes de IA principales. Todos son buenos, pero tienen diferencias.
+                    Te recomiendo probar los tres y quedarte con el que más te guste.
+                </p>
+
+                <div class="grid md:grid-cols-3 gap-6 mb-6">
+                    <!-- ChatGPT -->
+                    <div class="border-2 border-green-200 rounded-xl p-5 hover:border-green-400 transition">
+                        <div class="text-4xl mb-3">💚</div>
+                        <h4 class="font-bold text-xl text-gray-800 mb-2">ChatGPT</h4>
+                        <p class="text-sm text-gray-500 mb-3">por OpenAI</p>
+                        <ul class="text-sm text-gray-600 space-y-1 mb-4">
+                            <li>✓ El más popular</li>
+                            <li>✓ Versión gratis disponible</li>
+                            <li>✓ Bueno para todo uso general</li>
+                            <li>✓ Puede generar imágenes (Plus)</li>
+                        </ul>
+                        <a href="https://chat.openai.com" target="_blank"
+                           class="block text-center bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600 transition text-sm font-medium">
+                            Abrir ChatGPT →
+                        </a>
+                    </div>
+
+                    <!-- Claude -->
+                    <div class="border-2 border-orange-200 rounded-xl p-5 hover:border-orange-400 transition">
+                        <div class="text-4xl mb-3">🧡</div>
+                        <h4 class="font-bold text-xl text-gray-800 mb-2">Claude</h4>
+                        <p class="text-sm text-gray-500 mb-3">por Anthropic</p>
+                        <ul class="text-sm text-gray-600 space-y-1 mb-4">
+                            <li>✓ Excelente para textos largos</li>
+                            <li>✓ Muy bueno en análisis</li>
+                            <li>✓ Respuestas más detalladas</li>
+                            <li>✓ Mejor para documentos</li>
+                        </ul>
+                        <a href="https://claude.ai" target="_blank"
+                           class="block text-center bg-orange-500 text-white py-2 px-4 rounded-lg hover:bg-orange-600 transition text-sm font-medium">
+                            Abrir Claude →
+                        </a>
+                    </div>
+
+                    <!-- Gemini -->
+                    <div class="border-2 border-blue-200 rounded-xl p-5 hover:border-blue-400 transition">
+                        <div class="text-4xl mb-3">💙</div>
+                        <h4 class="font-bold text-xl text-gray-800 mb-2">Gemini</h4>
+                        <p class="text-sm text-gray-500 mb-3">por Google</p>
+                        <ul class="text-sm text-gray-600 space-y-1 mb-4">
+                            <li>✓ Integrado con Google</li>
+                            <li>✓ Acceso a información reciente</li>
+                            <li>✓ Bueno con datos y búsquedas</li>
+                            <li>✓ Gratis con cuenta Google</li>
+                        </ul>
+                        <a href="https://gemini.google.com" target="_blank"
+                           class="block text-center bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition text-sm font-medium">
+                            Abrir Gemini →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-xl p-5">
+                    <h4 class="font-semibold mb-3">🤔 ¿Cuál usar?</h4>
+                    <div class="grid md:grid-cols-3 gap-4 text-sm">
+                        <div>
+                            <p class="font-medium text-green-700">ChatGPT si...</p>
+                            <p class="text-gray-600">Quieres el más conocido y versátil</p>
+                        </div>
+                        <div>
+                            <p class="font-medium text-orange-700">Claude si...</p>
+                            <p class="text-gray-600">Necesitas escribir o analizar textos largos</p>
+                        </div>
+                        <div>
+                            <p class="font-medium text-blue-700">Gemini si...</p>
+                            <p class="text-gray-600">Quieres información actualizada de internet</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- GitHub Section -->
-        <section id="github" class="mb-16">
+        <!-- Sección 3: Cómo Usar -->
+        <section id="como-usar" class="mb-16">
             <div class="section-card bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
-                <div class="flex items-start gap-4">
-                    <div class="step-number bg-gray-800 text-white">2</div>
-                    <div class="flex-1">
-                        <div class="flex items-center gap-2 mb-2">
-                            <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">10 min</span>
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="bg-teal-100 text-teal-600 w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">3</span>
+                    <div>
+                        <span class="text-xs bg-teal-100 text-teal-700 px-2 py-1 rounded-full">10 min</span>
+                        <h2 class="text-2xl font-bold text-gray-800">Cómo Hablarle a la IA (El Secreto)</h2>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-teal-50 to-emerald-50 rounded-xl p-6 mb-6">
+                    <h3 class="font-semibold text-lg mb-3">🎯 La regla de oro:</h3>
+                    <p class="text-xl text-gray-700">
+                        <strong>Entre más contexto y detalles des, mejor respuesta obtienes.</strong>
+                    </p>
+                </div>
+
+                <!-- Mal vs Bien -->
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-red-50 rounded-xl p-5 border-2 border-red-200">
+                        <h4 class="font-semibold text-red-700 mb-3">❌ Así NO:</h4>
+                        <div class="bg-white rounded-lg p-4 text-gray-700 mb-3 border">
+                            "Escríbeme algo para vender"
                         </div>
-                        <h2 class="text-2xl font-bold text-gray-800 mb-4">GitHub: Tu portafolio de código</h2>
-
-                        <div class="bg-gray-50 rounded-xl p-6 mb-6">
-                            <h3 class="font-semibold text-lg mb-3">🤔 ¿Qué es GitHub?</h3>
-                            <p class="text-gray-600 mb-4">
-                                Imagina GitHub como <strong>Google Drive pero para código</strong>. Es donde los programadores guardan sus proyectos, colaboran con otros, y muestran su trabajo al mundo.
-                            </p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-white px-3 py-1 rounded-full text-sm border">📁 Guardar código</span>
-                                <span class="bg-white px-3 py-1 rounded-full text-sm border">🔄 Control de versiones</span>
-                                <span class="bg-white px-3 py-1 rounded-full text-sm border">👥 Colaboración</span>
-                                <span class="bg-white px-3 py-1 rounded-full text-sm border">🌐 Hosting gratis</span>
-                            </div>
+                        <p class="text-sm text-red-600">
+                            Muy vago. La IA no sabe qué vendes, a quién, ni dónde.
+                        </p>
+                    </div>
+                    <div class="bg-green-50 rounded-xl p-5 border-2 border-green-200">
+                        <h4 class="font-semibold text-green-700 mb-3">✅ Así SÍ:</h4>
+                        <div class="bg-white rounded-lg p-4 text-gray-700 mb-3 border">
+                            "Escríbeme un post de Instagram para vender pasteles artesanales.
+                            Mi público son mujeres de 25-45 años. El tono debe ser cálido y cercano.
+                            Incluye emojis y un llamado a la acción para que manden DM."
                         </div>
+                        <p class="text-sm text-green-600">
+                            Claro, específico, con contexto. ¡Excelente prompt!
+                        </p>
+                    </div>
+                </div>
 
-                        <h3 class="font-semibold text-lg mb-4">📝 Crear tu cuenta (es gratis):</h3>
-
-                        <div class="space-y-4">
-                            <div class="flex items-start gap-3 bg-gray-50 rounded-lg p-4">
-                                <span class="bg-gray-800 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold">1</span>
-                                <div>
-                                    <p class="font-medium">Ve a github.com</p>
-                                    <a href="https://github.com/signup" target="_blank" class="text-indigo-600 hover:underline text-sm">👉 github.com/signup</a>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start gap-3 bg-gray-50 rounded-lg p-4">
-                                <span class="bg-gray-800 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold">2</span>
-                                <div>
-                                    <p class="font-medium">Ingresa tu email</p>
-                                    <p class="text-gray-500 text-sm">Usa un email que revises frecuentemente</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start gap-3 bg-gray-50 rounded-lg p-4">
-                                <span class="bg-gray-800 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold">3</span>
-                                <div>
-                                    <p class="font-medium">Crea tu contraseña</p>
-                                    <p class="text-gray-500 text-sm">Mínimo 8 caracteres, incluye un número</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start gap-3 bg-gray-50 rounded-lg p-4">
-                                <span class="bg-gray-800 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold">4</span>
-                                <div>
-                                    <p class="font-medium">Elige tu nombre de usuario</p>
-                                    <p class="text-gray-500 text-sm">Este será tu URL: github.com/<strong>tu-usuario</strong></p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start gap-3 bg-gray-50 rounded-lg p-4">
-                                <span class="bg-gray-800 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold">5</span>
-                                <div>
-                                    <p class="font-medium">Verifica tu email</p>
-                                    <p class="text-gray-500 text-sm">Te llegará un código de verificación</p>
-                                </div>
-                            </div>
+                <!-- Fórmula -->
+                <div class="bg-indigo-50 rounded-xl p-6 mb-6">
+                    <h4 class="font-semibold text-indigo-800 mb-4">📝 Fórmula para buenos prompts:</h4>
+                    <div class="grid md:grid-cols-4 gap-4">
+                        <div class="bg-white rounded-lg p-4 text-center">
+                            <div class="text-2xl mb-2">1️⃣</div>
+                            <p class="font-medium text-indigo-700">ROL</p>
+                            <p class="text-sm text-gray-600">"Actúa como experto en..."</p>
                         </div>
-
-                        <div class="mt-6 bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r-lg">
-                            <p class="text-yellow-800">
-                                <strong>💡 Tip:</strong> Elige un nombre de usuario profesional. Muchas empresas revisan GitHub de candidatos.
-                            </p>
+                        <div class="bg-white rounded-lg p-4 text-center">
+                            <div class="text-2xl mb-2">2️⃣</div>
+                            <p class="font-medium text-indigo-700">TAREA</p>
+                            <p class="text-sm text-gray-600">"Necesito que hagas..."</p>
                         </div>
+                        <div class="bg-white rounded-lg p-4 text-center">
+                            <div class="text-2xl mb-2">3️⃣</div>
+                            <p class="font-medium text-indigo-700">CONTEXTO</p>
+                            <p class="text-sm text-gray-600">"El público es... porque..."</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 text-center">
+                            <div class="text-2xl mb-2">4️⃣</div>
+                            <p class="font-medium text-indigo-700">FORMATO</p>
+                            <p class="text-sm text-gray-600">"Dame la respuesta en..."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ejemplo completo -->
+                <div class="bg-gray-800 text-white rounded-xl p-6">
+                    <h4 class="font-semibold mb-3">💎 Ejemplo de prompt profesional:</h4>
+                    <div class="bg-gray-900 rounded-lg p-4 text-sm leading-relaxed">
+                        <p class="text-green-400 mb-2"># Prompt:</p>
+                        <p class="text-gray-300">
+                            <span class="text-yellow-400">[ROL]</span> Actúa como un experto en marketing digital para pequeños negocios.<br><br>
+                            <span class="text-yellow-400">[TAREA]</span> Necesito que me ayudes a crear 5 ideas de contenido para Instagram.<br><br>
+                            <span class="text-yellow-400">[CONTEXTO]</span> Tengo una cafetería artesanal en Guadalajara. Mi público son jóvenes profesionales de 25-35 años que valoran la calidad y el ambiente. Competimos con Starbucks ofreciendo algo más personal.<br><br>
+                            <span class="text-yellow-400">[FORMATO]</span> Para cada idea dame: el tipo de post (reel, carrusel, foto), el tema, y un ejemplo del copy.
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Fork Section -->
-        <section id="fork" class="mb-16">
-            <div class="section-card bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
-                <div class="flex items-start gap-4">
-                    <div class="step-number bg-green-500 text-white">3</div>
-                    <div class="flex-1">
-                        <div class="flex items-center gap-2 mb-2">
-                            <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">5 min</span>
-                        </div>
-                        <h2 class="text-2xl font-bold text-gray-800 mb-4">Obtén tu copia del curso</h2>
-
-                        <div class="bg-green-50 rounded-xl p-6 mb-6">
-                            <h3 class="font-semibold text-lg mb-3">🍴 ¿Qué es un "Fork"?</h3>
-                            <p class="text-gray-600">
-                                Un <strong>fork</strong> es como fotocopiar un libro. Obtienes tu propia copia que puedes modificar sin afectar el original. El proyecto original sigue intacto, y tú tienes libertad total sobre tu copia.
-                            </p>
-                        </div>
-
-                        <h3 class="font-semibold text-lg mb-4">📋 Pasos para hacer fork:</h3>
-
-                        <div class="space-y-4">
-                            <div class="flex items-start gap-3 bg-gray-50 rounded-lg p-4">
-                                <span class="bg-green-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold">1</span>
-                                <div>
-                                    <p class="font-medium">Ve al proyecto original</p>
-                                    <a href="https://github.com/BernardUriza/promptcraft-brython-" target="_blank" class="text-indigo-600 hover:underline text-sm">👉 github.com/BernardUriza/promptcraft-brython-</a>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start gap-3 bg-gray-50 rounded-lg p-4">
-                                <span class="bg-green-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold">2</span>
-                                <div>
-                                    <p class="font-medium">Haz clic en el botón "Fork"</p>
-                                    <p class="text-gray-500 text-sm">Está arriba a la derecha, junto a "Star" y "Watch"</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start gap-3 bg-gray-50 rounded-lg p-4">
-                                <span class="bg-green-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold">3</span>
-                                <div>
-                                    <p class="font-medium">Confirma la creación</p>
-                                    <p class="text-gray-500 text-sm">Deja las opciones por defecto y clic en "Create fork"</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start gap-3 bg-gray-50 rounded-lg p-4">
-                                <span class="bg-green-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold">4</span>
-                                <div>
-                                    <p class="font-medium">¡Listo! Ahora tienes tu copia</p>
-                                    <p class="text-gray-500 text-sm">La URL será: github.com/<strong>TU-USUARIO</strong>/promptcraft-brython-</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mt-6 bg-indigo-50 rounded-lg p-4">
-                            <h4 class="font-semibold text-indigo-800 mb-2">🌐 Activar GitHub Pages (tu sitio web gratis)</h4>
-                            <ol class="text-indigo-700 text-sm space-y-1">
-                                <li>1. En tu fork, ve a <strong>Settings</strong> (pestaña de ajustes)</li>
-                                <li>2. En el menú izquierdo, clic en <strong>Pages</strong></li>
-                                <li>3. En "Source" selecciona <strong>Deploy from a branch</strong></li>
-                                <li>4. Selecciona rama <strong>main</strong> y carpeta <strong>/ (root)</strong></li>
-                                <li>5. Clic en <strong>Save</strong></li>
-                                <li>6. Espera 1-2 minutos y visita: <code class="bg-indigo-100 px-1 rounded">https://TU-USUARIO.github.io/promptcraft-brython-/</code></li>
-                            </ol>
-                        </div>
+        <!-- Sección 4: GANAR DINERO (La más importante) -->
+        <section id="ganar-dinero" class="mb-16">
+            <div class="section-card bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 shadow-lg border-2 border-green-200 money-glow">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="bg-green-500 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">4</span>
+                    <div>
+                        <span class="text-xs bg-green-500 text-white px-2 py-1 rounded-full">15 min</span>
+                        <h2 class="text-2xl font-bold text-gray-800">💰 Cómo Ganar Dinero con IA</h2>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- Curso Section -->
-        <section id="curso" class="mb-16">
-            <div class="section-card bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
-                <div class="flex items-start gap-4">
-                    <div class="step-number bg-purple-500 text-white">4</div>
-                    <div class="flex-1">
-                        <div class="flex items-center gap-2 mb-2">
-                            <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">5 min</span>
-                        </div>
-                        <h2 class="text-2xl font-bold text-gray-800 mb-4">Explora el curso PromptCraft</h2>
+                <p class="text-lg text-gray-700 mb-6">
+                    Esta es la parte que realmente importa. Aquí hay <strong>formas reales y probadas</strong>
+                    de monetizar tus habilidades con IA:
+                </p>
 
-                        <div class="grid md:grid-cols-2 gap-4 mb-6">
-                            <div class="bg-gradient-to-br from-indigo-500 to-purple-600 text-white rounded-xl p-5">
-                                <div class="text-3xl mb-2">📚</div>
-                                <h4 class="font-bold text-lg">17+ Lecciones</h4>
-                                <p class="text-indigo-100 text-sm">Desde lo básico hasta técnicas avanzadas</p>
-                            </div>
-                            <div class="bg-gradient-to-br from-green-500 to-teal-600 text-white rounded-xl p-5">
-                                <div class="text-3xl mb-2">🧩</div>
-                                <h4 class="font-bold text-lg">12 Puzzles</h4>
-                                <p class="text-green-100 text-sm">Practica con retos de lógica</p>
-                            </div>
-                            <div class="bg-gradient-to-br from-orange-500 to-red-600 text-white rounded-xl p-5">
-                                <div class="text-3xl mb-2">🏆</div>
-                                <h4 class="font-bold text-lg">Gamificación</h4>
-                                <p class="text-orange-100 text-sm">XP, niveles, badges y rachas</p>
-                            </div>
-                            <div class="bg-gradient-to-br from-blue-500 to-cyan-600 text-white rounded-xl p-5">
-                                <div class="text-3xl mb-2">🤖</div>
-                                <h4 class="font-bold text-lg">Claude Code</h4>
-                                <p class="text-blue-100 text-sm">6 lecciones de programación con IA</p>
-                            </div>
-                        </div>
-
-                        <div class="bg-gray-50 rounded-lg p-4">
-                            <h4 class="font-semibold mb-3">🎮 Demo rápida del curso:</h4>
-                            <ul class="space-y-2 text-sm text-gray-600">
-                                <li>• Navega por las <strong>Lecciones</strong> - hay 5 categorías</li>
-                                <li>• Prueba un <strong>Puzzle</strong> - son tipo sudoku pero con conceptos</li>
-                                <li>• Revisa tu <strong>Perfil</strong> - ahí verás tu progreso, XP y badges</li>
-                                <li>• Experimenta en el <strong>Playground</strong> - practica escribir prompts</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Claude Code Section -->
-        <section id="claudecode" class="mb-16">
-            <div class="section-card bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
-                <div class="flex items-start gap-4">
-                    <div class="step-number bg-orange-500 text-white">5</div>
-                    <div class="flex-1">
-                        <div class="flex items-center gap-2 mb-2">
-                            <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">10 min</span>
-                        </div>
-                        <h2 class="text-2xl font-bold text-gray-800 mb-4">Instala Claude Code</h2>
-
-                        <div class="bg-orange-50 rounded-xl p-6 mb-6">
-                            <h3 class="font-semibold text-lg mb-3">🤖 ¿Qué es Claude Code?</h3>
+                <!-- Oportunidad 1 -->
+                <div class="bg-white rounded-xl p-6 mb-4 border border-green-200">
+                    <div class="flex items-start gap-4">
+                        <div class="text-3xl">✍️</div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-xl text-gray-800 mb-2">1. Servicios de Escritura y Contenido</h4>
                             <p class="text-gray-600 mb-3">
-                                Es un <strong>asistente de IA</strong> que funciona en tu terminal (línea de comandos). Puedes pedirle que:
+                                Ofrece crear contenido para negocios: posts de redes sociales, blogs, emails, descripciones de productos.
                             </p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-white px-3 py-1 rounded-full text-sm border">📖 Explique código</span>
-                                <span class="bg-white px-3 py-1 rounded-full text-sm border">✏️ Escriba funciones</span>
-                                <span class="bg-white px-3 py-1 rounded-full text-sm border">🐛 Encuentre bugs</span>
-                                <span class="bg-white px-3 py-1 rounded-full text-sm border">🔧 Refactorice</span>
-                                <span class="bg-white px-3 py-1 rounded-full text-sm border">📁 Navegue proyectos</span>
+                            <div class="bg-green-50 rounded-lg p-4 mb-3">
+                                <p class="font-medium text-green-800">💵 Potencial de ingresos:</p>
+                                <p class="text-green-700">$50-500 USD por cliente al mes (manejo de redes)</p>
+                                <p class="text-green-700">$20-100 USD por artículo de blog</p>
                             </div>
-                        </div>
-
-                        <h3 class="font-semibold text-lg mb-4">💻 Instalación paso a paso:</h3>
-
-                        <div class="space-y-4">
-                            <!-- Prerequisito: Node.js -->
-                            <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r-lg">
-                                <p class="font-medium text-yellow-800">⚠️ Prerrequisito: Node.js</p>
-                                <p class="text-yellow-700 text-sm mt-1">Si no tienes Node.js, descárgalo de: <a href="https://nodejs.org" target="_blank" class="underline">nodejs.org</a> (elige la versión LTS)</p>
+                            <div class="bg-gray-50 rounded-lg p-3">
+                                <p class="text-sm text-gray-600">
+                                    <strong>Cómo empezar:</strong> Ofrece a 3 negocios locales manejarles sus redes
+                                    por un mes gratis para crear tu portafolio. Usa la IA para generar el contenido
+                                    pero siempre personaliza y revisa.
+                                </p>
                             </div>
-
-                            <div class="flex items-start gap-3 bg-gray-50 rounded-lg p-4">
-                                <span class="bg-orange-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold">1</span>
-                                <div class="flex-1">
-                                    <p class="font-medium mb-2">Abre tu terminal</p>
-                                    <p class="text-gray-500 text-sm">
-                                        • <strong>Mac:</strong> Busca "Terminal" en Spotlight (Cmd + Space)<br>
-                                        • <strong>Windows:</strong> Busca "PowerShell" o "Command Prompt"
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start gap-3 bg-gray-50 rounded-lg p-4">
-                                <span class="bg-orange-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold">2</span>
-                                <div class="flex-1">
-                                    <p class="font-medium mb-2">Instala Claude Code</p>
-                                    <div class="code-block text-sm">
-                                        npm install -g @anthropic-ai/claude-code
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start gap-3 bg-gray-50 rounded-lg p-4">
-                                <span class="bg-orange-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold">3</span>
-                                <div class="flex-1">
-                                    <p class="font-medium mb-2">Inicia Claude Code</p>
-                                    <div class="code-block text-sm">
-                                        claude
-                                    </div>
-                                    <p class="text-gray-500 text-sm mt-2">La primera vez te pedirá iniciar sesión con tu cuenta de Anthropic</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start gap-3 bg-gray-50 rounded-lg p-4">
-                                <span class="bg-orange-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold">4</span>
-                                <div class="flex-1">
-                                    <p class="font-medium mb-2">¡Pruébalo!</p>
-                                    <div class="code-block text-sm">
-                                        <span class="text-gray-500"># Escribe esto en Claude Code:</span><br>
-                                        Hola, ¿cómo me puedes ayudar a programar?
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mt-6 bg-green-50 rounded-lg p-4">
-                            <h4 class="font-semibold text-green-800 mb-2">🎉 ¿Funcionó?</h4>
-                            <p class="text-green-700 text-sm">Si Claude te responde, ¡felicidades! Ya tienes tu asistente de IA funcionando.</p>
                         </div>
                     </div>
+                </div>
+
+                <!-- Oportunidad 2 -->
+                <div class="bg-white rounded-xl p-6 mb-4 border border-green-200">
+                    <div class="flex items-start gap-4">
+                        <div class="text-3xl">🌐</div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-xl text-gray-800 mb-2">2. Traducción y Localización</h4>
+                            <p class="text-gray-600 mb-3">
+                                La IA traduce rápido, pero necesita revisión humana. Ofrece traducciones de calidad revisadas.
+                            </p>
+                            <div class="bg-green-50 rounded-lg p-4 mb-3">
+                                <p class="font-medium text-green-800">💵 Potencial de ingresos:</p>
+                                <p class="text-green-700">$0.05-0.15 USD por palabra</p>
+                                <p class="text-green-700">Un documento de 2000 palabras = $100-300 USD</p>
+                            </div>
+                            <div class="bg-gray-50 rounded-lg p-3">
+                                <p class="text-sm text-gray-600">
+                                    <strong>Cómo empezar:</strong> Regístrate en plataformas como Gengo, TranslatorsCafe,
+                                    o busca en Fiverr/Upwork. La IA te ayuda a traducir más rápido, tú agregas la calidad.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Oportunidad 3 -->
+                <div class="bg-white rounded-xl p-6 mb-4 border border-green-200">
+                    <div class="flex items-start gap-4">
+                        <div class="text-3xl">📧</div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-xl text-gray-800 mb-2">3. Email Marketing y Copywriting</h4>
+                            <p class="text-gray-600 mb-3">
+                                Crea secuencias de emails de venta, newsletters, y textos persuasivos para negocios.
+                            </p>
+                            <div class="bg-green-50 rounded-lg p-4 mb-3">
+                                <p class="font-medium text-green-800">💵 Potencial de ingresos:</p>
+                                <p class="text-green-700">$100-500 USD por secuencia de emails (5-7 emails)</p>
+                                <p class="text-green-700">$500-2000 USD por página de ventas</p>
+                            </div>
+                            <div class="bg-gray-50 rounded-lg p-3">
+                                <p class="text-sm text-gray-600">
+                                    <strong>Cómo empezar:</strong> Aprende los básicos de copywriting (hay cursos gratis en YouTube).
+                                    La IA te da el borrador, tú lo adaptas al cliente y agregas el toque humano.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Oportunidad 4 -->
+                <div class="bg-white rounded-xl p-6 mb-4 border border-green-200">
+                    <div class="flex items-start gap-4">
+                        <div class="text-3xl">🎓</div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-xl text-gray-800 mb-2">4. Tutorías y Capacitación en IA</h4>
+                            <p class="text-gray-600 mb-3">
+                                Enseña a otros a usar ChatGPT/Claude. Muchas personas y empresas quieren aprender pero no saben cómo.
+                            </p>
+                            <div class="bg-green-50 rounded-lg p-4 mb-3">
+                                <p class="font-medium text-green-800">💵 Potencial de ingresos:</p>
+                                <p class="text-green-700">$30-100 USD por hora de tutoría 1 a 1</p>
+                                <p class="text-green-700">$200-1000 USD por taller grupal</p>
+                            </div>
+                            <div class="bg-gray-50 rounded-lg p-3">
+                                <p class="text-sm text-gray-600">
+                                    <strong>Cómo empezar:</strong> Una vez domines estas herramientas, ofrece capacitaciones
+                                    a profesionales: abogados, contadores, doctores, maestros - todos quieren aprender.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Oportunidad 5 -->
+                <div class="bg-white rounded-xl p-6 mb-4 border border-green-200">
+                    <div class="flex items-start gap-4">
+                        <div class="text-3xl">🤖</div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-xl text-gray-800 mb-2">5. Asistente Virtual con IA</h4>
+                            <p class="text-gray-600 mb-3">
+                                Ofrécete como asistente virtual pero usa IA para ser 10x más productivo.
+                            </p>
+                            <div class="bg-green-50 rounded-lg p-4 mb-3">
+                                <p class="font-medium text-green-800">💵 Potencial de ingresos:</p>
+                                <p class="text-green-700">$500-2000 USD mensuales por cliente</p>
+                                <p class="text-green-700">Puedes manejar 3-5 clientes gracias a la IA</p>
+                            </div>
+                            <div class="bg-gray-50 rounded-lg p-3">
+                                <p class="text-sm text-gray-600">
+                                    <strong>Tareas típicas:</strong> Responder emails, agendar citas, hacer investigación,
+                                    preparar presentaciones, crear reportes. La IA te ayuda a hacer todo más rápido.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Oportunidad 6 -->
+                <div class="bg-white rounded-xl p-6 mb-6 border border-green-200">
+                    <div class="flex items-start gap-4">
+                        <div class="text-3xl">📚</div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-xl text-gray-800 mb-2">6. Crear y Vender Productos Digitales</h4>
+                            <p class="text-gray-600 mb-3">
+                                Ebooks, guías, plantillas, cursos cortos - la IA te ayuda a crearlos rápido.
+                            </p>
+                            <div class="bg-green-50 rounded-lg p-4 mb-3">
+                                <p class="font-medium text-green-800">💵 Potencial de ingresos:</p>
+                                <p class="text-green-700">$10-50 USD por ebook (ventas ilimitadas)</p>
+                                <p class="text-green-700">$50-200 USD por curso corto</p>
+                            </div>
+                            <div class="bg-gray-50 rounded-lg p-3">
+                                <p class="text-sm text-gray-600">
+                                    <strong>Ejemplo:</strong> "Guía de recetas fáciles para principiantes" - la IA te ayuda
+                                    a escribirlo, tú agregas tu experiencia personal, lo vendes en Gumroad o Amazon.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advertencia importante -->
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-5 rounded-r-lg">
+                    <h4 class="font-bold text-yellow-800 mb-2">⚠️ Importante: La IA es tu HERRAMIENTA, no tu reemplazo</h4>
+                    <ul class="text-yellow-700 space-y-1">
+                        <li>• <strong>Siempre revisa</strong> lo que genera la IA antes de entregar a un cliente</li>
+                        <li>• <strong>Agrega tu toque personal</strong> - eso es lo que te hace valioso</li>
+                        <li>• <strong>Sé honesto</strong> sobre usar IA como herramienta (no tienes que ocultarlo)</li>
+                        <li>• <strong>Cobra por el valor</strong> que entregas, no por las horas que trabajas</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <!-- MCP Section -->
-        <section id="mcp" class="mb-16">
+        <!-- Sección 5: Práctica -->
+        <section id="practica" class="mb-16">
             <div class="section-card bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
-                <div class="flex items-start gap-4">
-                    <div class="step-number bg-blue-500 text-white">6</div>
-                    <div class="flex-1">
-                        <div class="flex items-center gap-2 mb-2">
-                            <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">10 min</span>
-                        </div>
-                        <h2 class="text-2xl font-bold text-gray-800 mb-4">Conecta MCPs (Superpoderes)</h2>
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="bg-indigo-100 text-indigo-600 w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold">5</span>
+                    <div>
+                        <span class="text-xs bg-indigo-100 text-indigo-700 px-2 py-1 rounded-full">5 min</span>
+                        <h2 class="text-2xl font-bold text-gray-800">Vamos a Practicar Ahora Mismo</h2>
+                    </div>
+                </div>
 
-                        <div class="bg-blue-50 rounded-xl p-6 mb-6">
-                            <h3 class="font-semibold text-lg mb-3">🔌 ¿Qué son los MCPs?</h3>
-                            <p class="text-gray-600 mb-3">
-                                <strong>MCP (Model Context Protocol)</strong> son "plugins" que le dan a Claude Code habilidades extra. Por ejemplo, con el MCP de GitHub, Claude puede crear repositorios, hacer commits, y abrir pull requests por ti.
-                            </p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-white px-3 py-1 rounded-full text-sm border">🐙 GitHub</span>
-                                <span class="bg-white px-3 py-1 rounded-full text-sm border">📁 Sistema de archivos</span>
-                                <span class="bg-white px-3 py-1 rounded-full text-sm border">🌐 Navegador</span>
-                                <span class="bg-white px-3 py-1 rounded-full text-sm border">🗄️ Bases de datos</span>
-                            </div>
-                        </div>
+                <p class="text-gray-600 mb-6">
+                    Abre ChatGPT, Claude o Gemini y prueba estos ejercicios conmigo:
+                </p>
 
-                        <h3 class="font-semibold text-lg mb-4">⚙️ Configurar MCP de GitHub:</h3>
-
-                        <div class="space-y-4">
-                            <div class="flex items-start gap-3 bg-gray-50 rounded-lg p-4">
-                                <span class="bg-blue-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold">1</span>
-                                <div class="flex-1">
-                                    <p class="font-medium mb-2">Abre la configuración de Claude Code</p>
-                                    <div class="code-block text-sm">
-                                        claude mcp add github
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start gap-3 bg-gray-50 rounded-lg p-4">
-                                <span class="bg-blue-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold">2</span>
-                                <div class="flex-1">
-                                    <p class="font-medium mb-2">Autoriza con GitHub</p>
-                                    <p class="text-gray-500 text-sm">Se abrirá tu navegador para que des permiso a Claude de acceder a tus repos</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start gap-3 bg-gray-50 rounded-lg p-4">
-                                <span class="bg-blue-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold">3</span>
-                                <div class="flex-1">
-                                    <p class="font-medium mb-2">¡Pruébalo!</p>
-                                    <div class="code-block text-sm">
-                                        <span class="text-gray-500"># En Claude Code, escribe:</span><br>
-                                        ¿Cuáles son mis repositorios en GitHub?
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mt-6 grid md:grid-cols-2 gap-4">
-                            <div class="bg-gray-50 rounded-lg p-4">
-                                <h4 class="font-semibold mb-2">📋 Otros MCPs útiles:</h4>
-                                <ul class="text-sm text-gray-600 space-y-1">
-                                    <li>• <code class="bg-gray-200 px-1 rounded">filesystem</code> - Leer/escribir archivos</li>
-                                    <li>• <code class="bg-gray-200 px-1 rounded">browser</code> - Buscar en internet</li>
-                                    <li>• <code class="bg-gray-200 px-1 rounded">postgres</code> - Bases de datos</li>
-                                </ul>
-                            </div>
-                            <div class="bg-purple-50 rounded-lg p-4">
-                                <h4 class="font-semibold text-purple-800 mb-2">💡 Pro tip:</h4>
-                                <p class="text-purple-700 text-sm">Puedes ver todos los MCPs disponibles con:<br><code class="bg-purple-100 px-1 rounded">claude mcp list</code></p>
-                            </div>
+                <div class="space-y-4 mb-6">
+                    <div class="bg-indigo-50 rounded-xl p-5">
+                        <h4 class="font-semibold text-indigo-800 mb-2">Ejercicio 1: Tu primer prompt de negocio</h4>
+                        <div class="bg-white rounded-lg p-4 border text-sm text-gray-700">
+                            "Actúa como experto en marketing. Necesito 3 ideas de servicios que puedo ofrecer
+                            usando inteligencia artificial como herramienta. Mi perfil: [DESCRIBE TU SITUACIÓN].
+                            Para cada idea explícame qué haría, a quién le vendería, y cuánto podría cobrar."
                         </div>
                     </div>
+
+                    <div class="bg-purple-50 rounded-xl p-5">
+                        <h4 class="font-semibold text-purple-800 mb-2">Ejercicio 2: Crear contenido real</h4>
+                        <div class="bg-white rounded-lg p-4 border text-sm text-gray-700">
+                            "Necesito un post de LinkedIn anunciando que ahora ofrezco servicios de [TU SERVICIO].
+                            El tono debe ser profesional pero accesible. Incluye un llamado a la acción para
+                            que me contacten por mensaje privado."
+                        </div>
+                    </div>
+
+                    <div class="bg-teal-50 rounded-xl p-5">
+                        <h4 class="font-semibold text-teal-800 mb-2">Ejercicio 3: Investigación rápida</h4>
+                        <div class="bg-white rounded-lg p-4 border text-sm text-gray-700">
+                            "Dame un resumen de las 5 mejores prácticas para empezar como freelancer en 2024.
+                            Para cada una explica: qué es, por qué importa, y un tip práctico para aplicarla hoy."
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Curso Interactivo -->
+                <div class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-xl p-6">
+                    <h4 class="font-bold text-xl mb-3">🎮 ¿Quieres practicar más?</h4>
+                    <p class="text-indigo-100 mb-4">
+                        Creé un curso interactivo donde puedes practicar escribir prompts,
+                        resolver puzzles, y ganar puntos mientras aprendes.
+                    </p>
+                    <a href="index.html"
+                       class="inline-block bg-white text-indigo-600 px-6 py-3 rounded-lg font-bold hover:bg-indigo-50 transition">
+                        Ir al Curso PromptCraft →
+                    </a>
                 </div>
             </div>
         </section>
 
         <!-- Siguientes Pasos -->
-        <section id="siguiente" class="mb-16">
-            <div class="section-card bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-2xl p-8 shadow-lg">
-                <h2 class="text-2xl font-bold mb-6">🎯 Siguientes pasos después de esta sesión</h2>
-
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="bg-white/10 backdrop-blur rounded-xl p-5">
-                        <div class="text-2xl mb-2">📖</div>
-                        <h4 class="font-bold text-lg mb-2">Esta semana</h4>
-                        <ul class="text-indigo-100 text-sm space-y-2">
-                            <li>✓ Completa las primeras 3 lecciones de PromptCraft</li>
-                            <li>✓ Resuelve al menos 1 puzzle</li>
-                            <li>✓ Practica con Claude Code 15 min al día</li>
-                        </ul>
-                    </div>
-
-                    <div class="bg-white/10 backdrop-blur rounded-xl p-5">
-                        <div class="text-2xl mb-2">🚀</div>
-                        <h4 class="font-bold text-lg mb-2">Este mes</h4>
-                        <ul class="text-indigo-100 text-sm space-y-2">
-                            <li>✓ Termina el módulo de "Claude Code"</li>
-                            <li>✓ Modifica algo del curso (sigue CONTRIBUTING.md)</li>
-                            <li>✓ Crea tu primer proyecto propio con ayuda de Claude</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="mt-6 bg-white/20 backdrop-blur rounded-xl p-5">
-                    <h4 class="font-bold text-lg mb-3">📚 Recursos para seguir aprendiendo:</h4>
-                    <div class="grid md:grid-cols-3 gap-4 text-sm">
-                        <a href="https://docs.anthropic.com/claude-code" target="_blank" class="bg-white/10 rounded-lg p-3 hover:bg-white/20 transition">
-                            <p class="font-medium">📘 Docs de Claude Code</p>
-                            <p class="text-indigo-200 text-xs">docs.anthropic.com</p>
-                        </a>
-                        <a href="https://github.com/BernardUriza/promptcraft-brython-" target="_blank" class="bg-white/10 rounded-lg p-3 hover:bg-white/20 transition">
-                            <p class="font-medium">💻 Repo PromptCraft</p>
-                            <p class="text-indigo-200 text-xs">El código del curso</p>
-                        </a>
-                        <a href="https://www.anthropic.com" target="_blank" class="bg-white/10 rounded-lg p-3 hover:bg-white/20 transition">
-                            <p class="font-medium">🌐 Anthropic</p>
-                            <p class="text-indigo-200 text-xs">Creadores de Claude</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Quick Reference Card -->
         <section class="mb-16">
             <div class="bg-gray-800 text-white rounded-2xl p-8">
-                <h2 class="text-xl font-bold mb-6">📋 Tarjeta de referencia rápida</h2>
+                <h2 class="text-2xl font-bold mb-6">📋 Tu Plan de Acción</h2>
 
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div>
-                        <h4 class="font-semibold text-gray-300 mb-3">🔗 Links importantes:</h4>
-                        <ul class="space-y-2 text-sm">
-                            <li>📍 Tu curso: <code class="bg-gray-700 px-2 py-1 rounded">https://TU-USUARIO.github.io/promptcraft-brython-/</code></li>
-                            <li>📍 Tu repo: <code class="bg-gray-700 px-2 py-1 rounded">github.com/TU-USUARIO/promptcraft-brython-</code></li>
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-gray-700 rounded-xl p-5">
+                        <h4 class="font-bold text-lg mb-3 text-emerald-400">Esta Semana:</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-center gap-2">
+                                <span class="text-emerald-400">□</span>
+                                Crear cuentas en ChatGPT, Claude y Gemini
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="text-emerald-400">□</span>
+                                Practicar 15 minutos diarios escribiendo prompts
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="text-emerald-400">□</span>
+                                Identificar 1 servicio que podrías ofrecer
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="text-emerald-400">□</span>
+                                Hacer el curso PromptCraft (3 lecciones mínimo)
+                            </li>
                         </ul>
                     </div>
-                    <div>
-                        <h4 class="font-semibold text-gray-300 mb-3">⌨️ Comandos esenciales:</h4>
-                        <ul class="space-y-2 text-sm font-mono">
-                            <li><span class="text-green-400">claude</span> → Iniciar Claude Code</li>
-                            <li><span class="text-green-400">claude mcp add github</span> → Agregar MCP</li>
-                            <li><span class="text-green-400">/help</span> → Ver ayuda en Claude</li>
+                    <div class="bg-gray-700 rounded-xl p-5">
+                        <h4 class="font-bold text-lg mb-3 text-yellow-400">Este Mes:</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-center gap-2">
+                                <span class="text-yellow-400">□</span>
+                                Definir tu servicio y precio
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="text-yellow-400">□</span>
+                                Ofrecer a 5 personas (aunque sea gratis al inicio)
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="text-yellow-400">□</span>
+                                Conseguir tu primer cliente
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="text-yellow-400">□</span>
+                                Crear perfil en LinkedIn o Fiverr
+                            </li>
                         </ul>
+                    </div>
+                </div>
+
+                <div class="bg-gray-700 rounded-xl p-5">
+                    <h4 class="font-bold text-lg mb-3">🔗 Links para empezar:</h4>
+                    <div class="grid md:grid-cols-4 gap-3">
+                        <a href="https://chat.openai.com" target="_blank" class="bg-gray-600 hover:bg-gray-500 rounded-lg p-3 text-center transition">
+                            <p class="font-medium">ChatGPT</p>
+                            <p class="text-xs text-gray-400">chat.openai.com</p>
+                        </a>
+                        <a href="https://claude.ai" target="_blank" class="bg-gray-600 hover:bg-gray-500 rounded-lg p-3 text-center transition">
+                            <p class="font-medium">Claude</p>
+                            <p class="text-xs text-gray-400">claude.ai</p>
+                        </a>
+                        <a href="https://gemini.google.com" target="_blank" class="bg-gray-600 hover:bg-gray-500 rounded-lg p-3 text-center transition">
+                            <p class="font-medium">Gemini</p>
+                            <p class="text-xs text-gray-400">gemini.google.com</p>
+                        </a>
+                        <a href="index.html" class="bg-indigo-600 hover:bg-indigo-500 rounded-lg p-3 text-center transition">
+                            <p class="font-medium">PromptCraft</p>
+                            <p class="text-xs text-indigo-300">Curso interactivo</p>
+                        </a>
                     </div>
                 </div>
             </div>
