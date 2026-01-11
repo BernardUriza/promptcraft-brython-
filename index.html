@@ -121,12 +121,40 @@ from browser import document, window, html, timer
 
 print("Starting PromptCraft...")
 
+def show_error_on_page(error_msg, traceback_text=""):
+    """Muestra el error visualmente en la página."""
+    loading = document.getElementById("loading-screen")
+    if loading:
+        loading.remove()
+
+    app_root = document.getElementById("app-root")
+    app_root.innerHTML = ""
+
+    error_div = html.DIV(Class="min-h-screen flex items-center justify-center bg-red-50 p-8")
+    error_card = html.DIV(Class="bg-white rounded-xl shadow-lg p-8 max-w-2xl w-full")
+
+    error_card <= html.H1("❌ Error de Carga", Class="text-2xl font-bold text-red-600 mb-4")
+    error_card <= html.P(str(error_msg), Class="text-red-800 font-mono bg-red-100 p-4 rounded mb-4")
+
+    if traceback_text:
+        error_card <= html.PRE(traceback_text, Class="text-xs text-gray-700 bg-gray-100 p-4 rounded overflow-auto max-h-64")
+
+    error_card <= html.P("Abre la consola del navegador (F12) para más detalles.", Class="text-gray-500 mt-4 text-sm")
+
+    # Botón para recargar
+    reload_btn = html.BUTTON("🔄 Recargar Página", Class="mt-4 px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700")
+    reload_btn.bind('click', lambda e: window.location.reload())
+    error_card <= reload_btn
+
+    error_div <= error_card
+    app_root <= error_div
+
 def start_app():
     try:
-        # Importar la aplicación
+        print("Step 1: Importing brython_modules.app...")
         from brython_modules.app import init_app
 
-        # Inicializar la aplicación
+        print("Step 2: Calling init_app()...")
         app = init_app()
 
         # Ocultar loading screen
@@ -138,11 +166,19 @@ def start_app():
         print("PromptCraft loaded successfully!")
 
     except Exception as e:
-        print(f"Error loading modular app: {e}")
         import traceback
-        traceback.print_exc()
-        print("Loading fallback inline version...")
-        load_fallback_app()
+        import io
+
+        # Capturar traceback completo
+        tb_buffer = io.StringIO()
+        traceback.print_exc(file=tb_buffer)
+        tb_text = tb_buffer.getvalue()
+
+        print(f"Error loading modular app: {e}")
+        print(tb_text)
+
+        # Mostrar error en página
+        show_error_on_page(e, tb_text)
 
 def load_fallback_app():
     """Versión fallback si los módulos no cargan"""
