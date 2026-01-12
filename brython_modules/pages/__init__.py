@@ -15,6 +15,7 @@ from .assessment import assessment_page
 from .practice import practice_page, practice_exercise_page
 from .claude_exercises import claude_exercises_page, claude_exercise_detail_page
 from .final_project import final_project_page
+from .guides import guides_page
 
 __all__ = [
     'home_page',
@@ -32,4 +33,5 @@ __all__ = [
     'claude_exercises_page',
     'claude_exercise_detail_page',
     'final_project_page',
+    'guides_page',
 ]

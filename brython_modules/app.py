@@ -53,6 +53,7 @@ class App:
         # Items de navegación con emojis (más simple y compatible)
         nav_items = [
             ('home', 'Inicio', '🏠'),
+            ('guides', 'Guías', '📖'),
             ('lessons', 'Lecciones', '📚'),
             ('practice', 'Práctica', '✍️'),
             ('puzzles', 'Puzzles', '🧩'),
@@ -168,7 +169,8 @@ class App:
             practice_exercise_page,
             claude_exercises_page,
             claude_exercise_detail_page,
-            final_project_page
+            final_project_page,
+            guides_page
         )
 
         router = self.router
@@ -190,6 +192,7 @@ class App:
         router.register('claude-exercises', claude_exercises_page, {'title': 'Ejercicios Claude Code'})
         router.register('claude-exercise/:id', claude_exercise_detail_page, {'title': 'Ejercicio Claude'})
         router.register('final-project', final_project_page, {'title': 'Proyecto Final'})
+        router.register('guides', guides_page, {'title': 'Guías de Inicio'})
 
         # Hook para actualizar navbar después de navegación
         def update_navbar_stats(context):
