@@ -49,6 +49,8 @@
     <!-- Brython -->
     <script src="https://cdn.jsdelivr.net/npm/brython@3.12.0/brython.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/brython@3.12.0/brython_stdlib.js"></script>
+    <!-- Módulos de la aplicación pre-bundled para GitHub Pages -->
+    <script src="brython_modules.js"></script>
 
     <style>
         /* Loading screen */
@@ -89,13 +91,10 @@
 <body class="bg-gray-50 text-gray-900 antialiased" onload="startBrython()">
     <script>
     function startBrython() {
-        // Construir URL base completa para módulos Python
-        var baseUrl = window.location.origin + window.location.pathname.replace(/\/index\.html$/, '').replace(/\/$/, '');
-        if (window.location.protocol === 'file:') {
-            baseUrl = '.';
-        }
-        console.log('Brython pythonpath:', baseUrl);
-        brython({debug: 2, cache: false, pythonpath: [baseUrl]});
+        // Los módulos están pre-bundled en brython_modules.js (VFS)
+        // No necesita pythonpath - funciona en GitHub Pages y local
+        console.log('Brython starting with bundled modules...');
+        brython({debug: 1, cache: true});
     }
     </script>
 
